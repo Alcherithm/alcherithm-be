@@ -16,7 +16,7 @@
 //resources are in resourcesData.js and can be called in as an object- resources.CATEGORYNAME
 
 
-const resources = require('./resourcesData');
+const resources = require('./resources-data');
 
 const challenges = [
   {
