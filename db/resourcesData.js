@@ -1,3 +1,18 @@
+//NOTES for RESOURCES DATA
+//Sample resource object
+// CategoryName: {
+//     overview:``.trim(),
+//     documentation: ['', ''],
+//     video: ''
+//   }
+
+//Resources can be found in the README.MD and the ASSIGNMENT.MD files in the src folder for each challenge. Look in both to find the overview, links to resources/documentation, and videos
+//category name should match 'category' in resourcesData'
+//Overview: should be in MD with backticks and left justified. Will need 'trim()' at the end after the backticks
+//documentation: is an array of url strings
+//video is a single url string
+
+
 const resources = 
   {
     forEach: {
@@ -24,13 +39,8 @@ const resources =
  - You cannot "break" or "continue" as you can with a for loop
  - By default, forEach does not mutate the array
  - If you mutate it in process, you will have interesting issues`.trim(),
-      documentation:`
-## Reference
-* [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-* [ForEach vs For](https://codeburst.io/javascript-the-difference-between-foreach-and-for-in-992db038e4c2)`.trim(),
-      video:`
-## Video
-Watch video from the [demo playlist.](https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k){:target="_blank"}.`.trim(),
+      documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach', 'https://codeburst.io/javascript-the-difference-between-foreach-and-for-in-992db038e4c2'],
+      video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
     },
     variables: {
       overview:`
@@ -108,20 +118,15 @@ Special attention should be paid to function calls. When an argument is passed i
     appendZero(a) // Passing this variable, is like saying 'list = a', so it's passed to the function by REFERENCE
 
     console.log(a) // [1, 2, 3, 4, 0] It now has the modification, changed from within the function. `.trim(),
-      documentation: `
-## References and Resources
-* [MDN - JavaScript Data Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-* [Grasp "By Reference", "By Value" in JavaScript](https://hackernoon.com/grasp-by-value-and-by-reference-in-javascript-7ed75efa1293)`.trim(),
-      video: `
-## Video
-Watch a video from the [demo playlist.](https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k)`.trim()
+      documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', 'https://hackernoon.com/grasp-by-value-and-by-reference-in-javascript-7ed75efa1293'],
+      video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
     },
 
 //Sample resource object
 // ReplaceWithCategoryName: {
 //     overview:``.trim(),
-//     documentation: ``.trim(),
-//     video: ``.trim()
+//     documentation: ['', ''],
+//     video: ''
 //   }
 
   };
