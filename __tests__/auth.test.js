@@ -21,7 +21,29 @@ describe('auth routes', () => {
           email: 'loki@domain.com',
           createdAt: expect.any(String),
           updatedAt: expect.any(String),
-          signupDate: expect.any(String),
+          signUpDate: expect.any(String),
+          sessionDates: expect.any(Array),
+          sessionDurations: expect.any(Array),
+        });
+      });
+  });
+  it('logs in a user', () => {
+    return request(app)
+      .post('/api/v1/auth/login')
+      .send({
+        email: 'charlotte@domain.com',
+        password: 'butters13',
+      })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.any(String),
+          firstName: 'Charlotte',
+          lastName: 'Katze',
+          email: 'charlotte@domain.com',
+          cohort: 'Winter 2020',
+          createdAt: expect.any(String),
+          updatedAt: expect.any(String),
+          signUpDate: expect.any(String),
           sessionDates: expect.any(Array),
           sessionDurations: expect.any(Array),
         });
