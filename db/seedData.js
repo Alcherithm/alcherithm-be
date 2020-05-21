@@ -1,3 +1,21 @@
+//NOTES FOR DATA INPUT: 
+//challenges = [
+//   {
+//     category: '',
+//     challengeNumber: , 
+//     instructions: ``.trim(),
+//     starterCode: ``.trim(),
+//     qunitTest: ``.trim(),
+//     resources: 
+//   }
+// ];
+
+//NOTES: category = category name (each branch in the BC2 repo is a new category). Try to keep it short-one word preferred
+//instructions, starterCode, and qunitTest all need to be wrapped in backticks and left justified. '.trim()' should be added after the backticks. 
+//All tests should begin with 'QUnit.test'. There should be no skipped tests. 
+//resources are in resourcesData.js and can be called in as an object- resources.CATEGORYNAME
+
+
 const resources = require('./resourcesData');
 
 const challenges = [
@@ -21,12 +39,12 @@ QUnit.test('It should return the message with all uppercase characters', assert 
     const result = speaker('hello Bootcamp 2 students!', greeting);
     assert.equal(result, 'HELLO BOOTCAMP 2 STUDENTS!');
 });`.trim(),
-    resources: resources.forEach
+    resources: resources.forEach 
   },
   {
     category: 'ForEach',
-    number: 2, 
-    description: `
+    challengeNumber: 2, 
+    instructions: `
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
 
 Then, write a function named addNumbers that takes in four arguments:
@@ -45,8 +63,8 @@ export const addValues = (arr, value) => {
 export const addNumbers = (num, arr, times, callback) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should add the number 8 to the array five times', assert => {
+    qunitTest: `
+QUnit.test('It should add the number 8 to the array five times', assert => {
     const array = [];
     const result = addNumbers(8, array, 5, addValues);
     assert.equal(array, result);
@@ -56,8 +74,8 @@ test('It should add the number 8 to the array five times', assert => {
   },
   {
     category: 'ForEach',
-    number: 3, 
-    description: `
+    challengeNumber: 3, 
+    instructions: `
 Write a function named removeOne that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array. Hint: you may want to look into the modulo operation.
 
 Then, write a function named removeElements that takes in an array and a callback. This function should use a for loop to iterate over the array and invoke the callback once for each element in the array.
@@ -70,8 +88,8 @@ export const removeOne = (num, arr) => {
 export const removeElements = (arr, callback) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should remove three elements from the array', assert => {
+    qunitTest: `
+QUnit.test('It should remove three elements from the array', assert => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const result = removeElements(array, removeOne);
     assert.equal(array, result);
@@ -81,8 +99,8 @@ test('It should remove three elements from the array', assert => {
   },
   {
     category: 'ForEach',
-    number: 4, 
-    description: `
+    challengeNumber: 4, 
+    instructions: `
 Write a function named removeWithForEach that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array. Hint: you may want to look into the modulo operation.
 
 Then, write a function named removeElements that takes in an array and a callback. This function should use a forEach loop to iterate over the array and invoke the callback once for each element in the array.
@@ -91,8 +109,8 @@ Return the modified array.`.trim(),
 export const removeWithForEach = (arr, callback) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should remove three elements from the array', assert => {
+    qunitTest: `
+QUnit.test('It should remove three elements from the array', assert => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const result = removeWithForEach(array, removeOne);
     assert.equal(array, result);
@@ -102,8 +120,8 @@ test('It should remove three elements from the array', assert => {
   },
   {
     category: 'ForEach',
-    number: 5, 
-    description: `
+    challengeNumber: 5, 
+    instructions: `
 Write a function named removeWithAnon that produces the same output as challenges 3 and 4.
 
 This function should use forEach again, but rather than taking in a callback as an argument, 
@@ -113,8 +131,8 @@ in removeOne directly into this anonymous function.`.trim(),
 export const removeWithAnon = (arr) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should remove three elements from the array', assert => {
+    qunitTest: `
+QUnit.test('It should remove three elements from the array', assert => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const result = removeWithAnon(array);
     assert.equal(array, result);
@@ -124,8 +142,8 @@ test('It should remove three elements from the array', assert => {
   },
   {
     category: 'ForEach',
-    number: 6, 
-    description: `
+    challengeNumber: 6, 
+    instructions: `
 Write a function named createList that takes in an array of the current store inventory.
 The inventory is formatted like this:
 [
@@ -140,8 +158,8 @@ This function should create another new array (the grocery list) and then use fo
 export const createList = (availableItems) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should only add the available items to the list', assert => {
+    qunitTest: `
+QUnit.test('It should only add the available items to the list', assert => {
     const inventory = [
         { name: 'apples', available: true }, 
         { name: 'pears', available: true }, 
@@ -156,8 +174,8 @@ test('It should only add the available items to the list', assert => {
   },
   {
     category: 'ForEach',
-    number: 7, 
-    description: `
+    challengeNumber: 7, 
+    instructions: `
 Write a function named fizzBuzz that takes in an array of numbers.
 
 It should create another array (the output) to store the results. 
@@ -173,8 +191,8 @@ Return the resulting output array.`.trim(),
 export const fizzBuzz = (arr) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should print out messages or numbers according to fizz buzz rules', assert => {
+    qunitTest: `
+QUnit.test('It should print out messages or numbers according to fizz buzz rules', assert => {
     const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const outputs = fizzBuzz(inputs);
     assert.deepEqual(outputs, [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
@@ -183,15 +201,15 @@ test('It should print out messages or numbers according to fizz buzz rules', ass
   },
   {
     category: 'Variables',
-    number: 1, 
-    description: `
+    challengeNumber: 1, 
+    instructions: `
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.`.trim(),
     starterCode: `
 export const appendTheEnd = (str) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should append without modifying the original', (assert) => {
+    qunitTest: `
+QUnit.test('It should append without modifying the original', (assert) => {
     const a = 'This is my story.';
     const b = appendTheEnd(a);
 
@@ -202,8 +220,8 @@ test('It should append without modifying the original', (assert) => {
   },
   {
     category: 'Variables',
-    number: 2, 
-    description: `
+    challengeNumber: 2, 
+    instructions: `
 Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'. Do not use a return statement.
 
 For example:
@@ -214,8 +232,8 @@ For example:
 export const appendFirstToLast = (arr) => {
     // Solution code here...
     };`.trim(),
-    test: `
-test('It should append by modifying the original', (assert) => {
+    qunitTest: `
+QUnit.test('It should append by modifying the original', (assert) => {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
 
@@ -225,8 +243,8 @@ test('It should append by modifying the original', (assert) => {
   },
   {
     category: 'Variables',
-    number: 3, 
-    description: `
+    challengeNumber: 3, 
+    instructions: `
 Write a function that accepts an object and an integer as arguments and adds a new property to the object called yearBorn. The value of the yearBorn property should be the integer that was passed in.
 
 The change should be reflected in the source object that was passed in to the function. That is, the function should modify the object 'in place'.
@@ -241,8 +259,8 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }`.tr
 export const addBirthYearProperty = (obj, year) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should add a property to an object', (assert) => {
+    qunitTest: `
+QUnit.test('It should add a property to an object', (assert) => {
     const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
 
@@ -252,8 +270,8 @@ test('It should add a property to an object', (assert) => {
   },
   {
     category: 'Variables',
-    number: 4, 
-    description: `
+    challengeNumber: 4, 
+    instructions: `
 Write a function that accepts an array of people objects and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
 
 The function should modify the object in place. Do not use a return statement.
@@ -266,8 +284,8 @@ console.log(people[1].isAuthor) prints true`.trim(),
 export const setStatusAsAuthor = (people) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should add a property to every object in an array', (assert) => {
+    qunitTest: `
+QUnit.test('It should add a property to every object in an array', (assert) => {
     const a = [
         { fullName: 'Octavia Butler' }, 
         { fullName: 'Ray Bradbury' }, 
@@ -283,8 +301,8 @@ test('It should add a property to every object in an array', (assert) => {
   },
   {
     category: 'Variables',
-    number: 5, 
-    description: `
+    challengeNumber: 5, 
+    instructions: `
 Write a function that accepts two arrays. Append the values from the second array into the first,
 maintaining the ordering.
 
@@ -299,8 +317,8 @@ For example:
 export const append = (arr1, arr2) => {
     // Solution code here...
 };`.trim(),
-    test: `
-test('It should append the second array to the first', (assert) => {
+    qunitTest: `
+QUnit.test('It should append the second array to the first', (assert) => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
     append(a, b);
@@ -309,14 +327,14 @@ test('It should append the second array to the first', (assert) => {
 });`.trim(),
     resources: resources.variables 
   },
-  {
-    category: '',
-    number: , 
-    description: ``.trim(),
-    starterCode: ``.trim(),
-    test: ``.trim(),
-    resources: 
-  },
+  //   {
+  //     category: '',
+  //     challengeNumber: , 
+  //     instructions: ``.trim(),
+  //     starterCode: ``.trim(),
+  //     qunitTest: ``.trim(),
+  //     resources: 
+  //   },
   
 ];
 
