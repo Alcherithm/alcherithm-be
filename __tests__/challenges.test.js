@@ -3,7 +3,7 @@ const { getChallenges } = require('../db/data-helpers');
 const request = require('supertest');
 const app = require('../lib/app');
 
-describe('users routes', () => {
+describe('challenge routes', () => {
   describe('challenges routes', () => {
 
     it('gets all challenges', async() => {
