@@ -14,10 +14,10 @@ export const greeting = (word) => {
 };
     
 export const speaker = (message, callback) => {
-    // Solution code here...
+  // Solution code here...
 };`.trim(),
     test: `
-test('It should return the message with all uppercase characters', assert => {
+QUnit.test('It should return the message with all uppercase characters', assert => {
     const result = speaker('hello Bootcamp 2 students!', greeting);
     assert.equal(result, 'HELLO BOOTCAMP 2 STUDENTS!');
 });`.trim(),

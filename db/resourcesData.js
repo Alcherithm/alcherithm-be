@@ -1,3 +1,11 @@
+resources {
+    forEach : {
+    overview:
+    documentation:
+    video:
+    }
+}
+
 const resources = 
   {
     forEach: `
