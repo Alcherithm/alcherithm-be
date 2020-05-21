@@ -2,7 +2,7 @@ const resources = require('./resourcesData');
 
 const challenges = [
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 1, 
     description: `
 Write a function named greeting that takes in a string and returns the string in all uppercase letters.
@@ -24,7 +24,7 @@ test('It should return the message with all uppercase characters', assert => {
     resources: resources.forEach
   },
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 2, 
     description: `
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
@@ -55,7 +55,7 @@ test('It should add the number 8 to the array five times', assert => {
     resources: resources.forEach
   },
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 3, 
     description: `
 Write a function named removeOne that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array. Hint: you may want to look into the modulo operation.
@@ -80,7 +80,7 @@ test('It should remove three elements from the array', assert => {
     resources: resources.forEach
   },
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 4, 
     description: `
 Write a function named removeWithForEach that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array. Hint: you may want to look into the modulo operation.
@@ -101,7 +101,7 @@ test('It should remove three elements from the array', assert => {
     resources: resources.forEach
   },
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 5, 
     description: `
 Write a function named removeWithAnon that produces the same output as challenges 3 and 4.
@@ -123,7 +123,7 @@ test('It should remove three elements from the array', assert => {
     resources: resources.forEach
   },
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 6, 
     description: `
 Write a function named createList that takes in an array of the current store inventory.
@@ -155,7 +155,7 @@ test('It should only add the available items to the list', assert => {
     resources: resources.forEach
   },
   {
-    category: 'For Each',
+    category: 'ForEach',
     number: 7, 
     description: `
 Write a function named fizzBuzz that takes in an array of numbers.
@@ -182,23 +182,49 @@ test('It should print out messages or numbers according to fizz buzz rules', ass
     resources: resources.forEach
   },
   {
-    category: '',
-    number: , 
-    description: ``.trim(),
-    starterCode: ``.trim(),
-    test: ``.trim(),
-    resources: 
+    category: 'Variables',
+    number: 1, 
+    description: `
+Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.`.trim(),
+    starterCode: `
+export const appendTheEnd = (str) => {
+    // Solution code here...
+};`.trim(),
+    test: `
+test('It should append without modifying the original', (assert) => {
+    const a = 'This is my story.';
+    const b = appendTheEnd(a);
+
+    assert.equal(a, 'This is my story.');
+    assert.equal(b, 'This is my story. The end.');
+});`.trim(),
+    resources: resources.variables
   },
   {
-    category: '',
-    number: , 
-    description: ``.trim(),
-    starterCode: ``.trim(),
-    test: ``.trim(),
-    resources: 
+    category: 'Variables',
+    number: 2, 
+    description: `
+Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'. Do not use a return statement.
+
+For example:
+    const a = [1, 2, 3];
+    appendFirstToLast(a);
+    console.log(a) prints [1, 2, 3, 1]`.trim(),
+    starterCode: `
+export const appendFirstToLast = (arr) => {
+    // Solution code here...
+    };`.trim(),
+    test: `
+test('It should append by modifying the original', (assert) => {
+    const a = ['Yes', 'it', 'is'];
+    appendFirstToLast(a);
+
+    assert.deepEqual(a, ['Yes', 'it', 'is', 'Yes']);
+});`.trim(),
+    resources: resources.variables
   },
   {
-    category: '',
+    category: 'Variables',
     number: , 
     description: ``.trim(),
     starterCode: ``.trim(),

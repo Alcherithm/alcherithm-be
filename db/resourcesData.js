@@ -33,7 +33,7 @@ const resources =
  
  ## Demonstration
  Look through [these sample problems.](DEMO.md){:target="_blank"}`.trim(),
-    valueVsReference: `
+    variables: `
 # Variables: Value vs. Reference 
 
 ## Overview
