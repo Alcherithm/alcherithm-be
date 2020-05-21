@@ -23,13 +23,13 @@ afterAll(() => {
   return mongoose.connection.close();
 });
 
-const agent = request(app);
+const agent = request.agent(app);
 beforeEach(() => {
   return agent
     .post('/api/v1/auth/login')
     .send({
       email: 'charlotte@domain.com',
-      password: '1234'
+      password: 'butters13'
     });
 });
 
