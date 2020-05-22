@@ -1,4 +1,7 @@
 const User = require('../lib/models/User');
+const Challenge = require('../lib/models/Challenge');
+const challenges = require('./seedData');
+
 
 module.exports = async() => {
   await User.create([{
@@ -14,4 +17,6 @@ module.exports = async() => {
     password: 'char13',
     cohort: 'Winter 2020'
   }]);
+
+  await Challenge.create(challenges);
 };
