@@ -1,9 +1,10 @@
 const User = require('../lib/models/User');
 const Challenge = require('../lib/models/Challenge');
-const challenges = require('./seedData');
-
+const challenges = require('./challenges-data');
 
 module.exports = async() => {
+  await Challenge.create(challenges);
+
   await User.create([{
     firstName: 'Charlotte',
     lastName: 'Katze',
