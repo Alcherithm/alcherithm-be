@@ -3,7 +3,7 @@ const Challenge = require('../lib/models/Challenge');
 const challenges = require('./challenges-data');
 
 module.exports = async() => {
-  await Challenge.create(challenges.map(challenge => challenge));
+  await Challenge.create(challenges);
 
   await User.create([{
     firstName: 'Charlotte',
@@ -18,4 +18,6 @@ module.exports = async() => {
     password: 'char13',
     cohort: 'Winter 2020'
   }]);
+
+  await Challenge.create(challenges);
 };
