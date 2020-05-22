@@ -4,7 +4,7 @@ const Solution = require('../lib/models/Solution');
 const challenges = require('./challenges-data');
 
 module.exports = async() => {
-  const codeChallenges = await Challenge.create(challenges.map(challenge => challenge));
+  const codeChallenges = await Challenge.create(challenges);
 
   const users = await User.create([{
     firstName: 'Charlotte',
@@ -102,4 +102,3 @@ export const removeElements = (arr, callback) => {
   return arr;
 };`
   }]);
-};
