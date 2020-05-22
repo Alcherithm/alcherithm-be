@@ -102,3 +102,4 @@ export const removeElements = (arr, callback) => {
   return arr;
 };`
   }]);
+};
