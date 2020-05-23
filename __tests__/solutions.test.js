@@ -1,4 +1,4 @@
-const { getSolution, getUser, getChallenge } = require('../db/data-helpers');
+const { getSolution, getSolutions, getUser, getChallenge } = require('../db/data-helpers');
 const request = require('supertest');
 const app = require('../lib/app');
 
@@ -45,4 +45,17 @@ export const speaker = (message, callback) => {
         });
       });
   });
+
+  it('gets solutions by challengeId', async() => {
+    const challenge = await getChallenge();
+    const solutions = await getSolutions({ challengeId: challenge._id });
+    const user = await getUser();
+
+    return request(app)
+      .get(`/api/v1/solutions/${challenge._id}`)
+      .then(res => {
+        expect(res.body).toEqual(solutions);
+      });
+  });
+
 });
