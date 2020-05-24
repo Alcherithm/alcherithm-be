@@ -58,4 +58,23 @@ export const speaker = (message, callback) => {
         })));
       });
   });
+
+  it('gets solutions by challenge id and user id', async() => {
+    const challenge = await getChallenge();
+    const solutions = await getSolutions({ challengeId: challenge._id });
+
+    const userIds = solutions.map(solution => solution.userId);
+
+    return request(app)
+      .get(`/api/v1/solutions?challengeId=${challenge._id}&userId=${userIds[0]}`)
+      .then(res => {
+        expect(res.body).toEqual(solutions.map(solution => ({
+          __v: expect.any(Number),
+          _id: solution._id,
+          createdAt: solution.createdAt,
+          passed: solution.passed,
+          solution: solution.solution
+        })));
+      });
+  });
 });
