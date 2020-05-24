@@ -1,10 +1,9 @@
-const { getSolution, getSolutions, getUser, getChallenge } = require('../db/data-helpers');
+const { getSolutions, getUser, getChallenge } = require('../db/data-helpers');
 const request = require('supertest');
 const app = require('../lib/app');
 
 describe('Solution routes', () => {
   it('creates a solution', async() => {
-    const solution = await getSolution();
     const user = await getUser();
     const challenge = await getChallenge();
 
@@ -46,16 +45,17 @@ export const speaker = (message, callback) => {
       });
   });
 
-  it('gets solutions by challengeId', async() => {
+  it('gets solutions by challenge id', async() => {
     const challenge = await getChallenge();
-    const solutions = await getSolutions({ challengeId: challenge._id });
-    const user = await getUser();
+    const solutions = await getSolutions({ challengeId: challenge._id, passed: true });
 
     return request(app)
-      .get(`/api/v1/solutions/${challenge._id}`)
+      .get(`/api/v1/solutions?challengeId=${challenge._id}`)
       .then(res => {
-        expect(res.body).toEqual(solutions);
+        expect(res.body).toEqual(solutions.map(solution => ({
+          _id: solution._id,
+          solution: solution.solution
+        })));
       });
   });
-
 });
