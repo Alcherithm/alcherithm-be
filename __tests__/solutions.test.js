@@ -45,6 +45,51 @@ const speaker = (message, callback) => {
       });
   });
 
+  it('gets solutions by user id and groups by challenge number', async() => {
+    const user = getUser();
+    const solutions = await getSolutions({ userId: user._id });
+  
+    return request(app)
+      .get(`/api/v1/solutions?userId=${user._id}`)
+      .then(res => {
+        expect(res.body).toEqual(expect.arrayContaining(solutions.map(solution => ({
+          _id: expect.any(String),
+          solutions: [
+            {
+              solution: solution.solution,
+              passed: solution.passed,
+              createdAt: solution.createdAt
+            }
+          ],
+          challenge: {
+            category: expect.any(String),
+            challengeNumber: expect.any(Number),
+            instructions: expect.any(String)
+          }
+        }))));
+      });
+  });
+
+
+  it('gets solutions by challenge id and user id', async() => {
+    const challenge = await getChallenge();
+    const solutions = await getSolutions({ challengeId: challenge._id });
+
+    const userIds = solutions.map(solution => solution.userId);
+
+    return request(app)
+      .get(`/api/v1/solutions?challengeId=${challenge._id}&userId=${userIds[0]}`)
+      .then(res => {
+        expect(res.body).toContainEqual({
+          _id: solutions[0]._id,
+          createdAt: solutions[0].createdAt,
+          passed: solutions[0].passed,
+          solution: solutions[0].solution
+        });
+      });
+  });
+
+
   it('gets solutions by challenge id', async() => {
     const challenge = await getChallenge();
     const solutions = await getSolutions({ challengeId: challenge._id, passed: true });
@@ -54,25 +99,6 @@ const speaker = (message, callback) => {
       .then(res => {
         expect(res.body).toEqual(solutions.map(solution => ({
           _id: solution._id,
-          solution: solution.solution
-        })));
-      });
-  });
-
-  it.skip('gets solutions by challenge id and user id', async() => {
-    const challenge = await getChallenge();
-    const solutions = await getSolutions({ challengeId: challenge._id });
-
-    const userIds = solutions.map(solution => solution.userId);
-
-    return request(app)
-      .get(`/api/v1/solutions?challengeId=${challenge._id}&userId=${userIds[0]}`)
-      .then(res => {
-        expect(res.body).toEqual(solutions.map(solution => ({
-          __v: expect.any(Number),
-          _id: solution._id,
-          createdAt: solution.createdAt,
-          passed: solution.passed,
           solution: solution.solution
         })));
       });
