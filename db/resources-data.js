@@ -13,7 +13,6 @@
 //video is a single url string
 
 
-<<<<<<< HEAD
 const resources =
 {
   forEach: {
@@ -22,16 +21,6 @@ const resources =
 
 #### Overview
 \`Array.forEach\` allows you to iterate through an array. Where a normal \`for\` loop is "iterative", \`forEach\` is more declarative or functional in nature.
-=======
-const resources = 
-  {
-    forEach: {
-      overview: `
- # Array.forEach
-
- ## Overview
- Array.forEach allows you to iterate through an array. Where a normal 'for' loop is "iterative", forEach is more declarative or functional in nature.
->>>>>>> 008bf6758e1c7c99f3eecca7ff74829a9717e37c
      
 It is implemented as a method on your array instance.
 \`\`\`js
@@ -165,7 +154,6 @@ The compareFunction is a function that is used by sort to evaluate sibling value
     if (a is less than b by some ordering criterion) {
       return -1;
     }
-<<<<<<< HEAD
     if (a is greater than b by the ordering criterion) {
       return 1;
     }
@@ -201,6 +189,117 @@ The compareFunction is a function that is used by sort to evaluate sibling value
 - compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned then the sort order is undefined.`.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'],
     video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
+  },
+  stringMethods: {
+    overview: `
+### String Methods
+
+Fun with \`slice()\`, \`splice()\`, \`split()\`, \`join()\`!
+
+#### Overview
+**split()** -- Turning Strings into arrays
+Using the \`split(separator)\` method on a string will quickly parse the string finding every instance of the \`separator\` character(s) that you identify, and where it finds them, "split" the string at that point and create an array element.
+- The string is not modified
+- The \`separator\` characters is removed as the string is "split" up based on it...
+
+\`\`\`js
+let str = 'This is a really cool thing';
+let words = str.split(' ');
+console.log(words);
+  // prints out: [ 'This', 'is', 'a', 'really', 'cool', 'thing' ]
+
+let iii = str.split('i');
+console.log(iii);
+  // prints out: [ 'Th', 's ', 's a really cool th', 'ng' ]
+\`\`\`
+
+**join()** -- Turning arrays into strings
+The \`join(char)\` array method will iterate an array and create a string by concatenating the value of each element in the array with the \`char\` that you specify.
+- The original array is not modified
+- Given no \`char\`, join() will insert commas.
+
+\`\`\`js
+let arr = ['this','was','fun']
+console.log( arr.join() ); // commas will be the default
+  // prints out: this,was,fun
+  
+console.log( arr.join('') ); // one long word
+  // prints out: thiswasfun
+  
+console.log( arr.join('.') ); // millenial advertising
+  // prints out: this.was.fun.
+  
+console.log( arr.join('-') ); // kebab case
+  // prints out: this-was-fun
+  
+console.log( arr.join('_') ); // snake case
+  // prints out: this_was_fun
+\`\`\`
+
+**slice()** -- Find elements within an array
+- The array is not modified
+- Identify the start index and the end index (optional)
+- Positive indexes start at the front of the array, negatives start at the end.
+
+\`\`\`js
+let arr = ['a','b','c','d','e'];
+
+// Find 2 elements starting at position 0
+console.log( arr.slice(0,2) );
+  // output: [ 'a', 'b' ]
+
+// Find 2 elements starting at position 2
+console.log( arr.slice(2,4) );
+  // output: [ 'c', 'd' ]
+
+// Find 1 elements starting at position 4
+console.log( arr.slice(3,4) );
+  // output: [ 'd' ]
+
+// Find 1 elements starting at position 0
+console.log( arr.slice(0,1) );
+  // output: [ 'a' ]
+
+// Find the last element
+console.log( arr.slice(arr.length-1) );
+  // output: [ 'e' ]
+
+// 2 from the front to the end ...
+console.log( arr.slice(2) ); 
+  // output: [ 'c', 'd', 'e' ]
+
+// 2 from the end to the front ...
+console.log( arr.slice(-2) );
+  // output: [ 'd', 'e' ]
+\`\`\`
+
+**splice()** -- replace parts of an array with new values
+- The array IS modified
+- 3 parameters: Start Index, # of Elements to Remove, Replacement Value
+
+\`\`\`js
+let arr = ['a','b','c','d','e'];
+
+// At arr index 1, replace 0 elements with 99
+// This will INSERT a new element into the array
+arr.splice(1,0,99)
+console.log(arr);
+  // output: [ 'a', 99, 'b', 'c', 'd', 'e' ]
+
+// At arr index 1, replace 1 element with nothing
+// This will DELETE an array element at a particlular index
+arr.splice(1,1)
+console.log(arr);
+  // output: [ 'a', 'b', 'c', 'd', 'e' ]
+
+// At arr index 2, replace 3 elements with 99
+// This will shorten the array, but add a new value
+arr.splice(2,3,99)
+console.log(arr);
+  // output: [ 'a', 'b', 99 ]
+\`\`\``,
+    documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split', `https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join`],
+    video: null
   }
 };
 //Sample resource object
@@ -209,72 +308,5 @@ The compareFunction is a function that is used by sort to evaluate sibling value
 //     documentation: ['', ''],
 //     video: ''
 //   }
-=======
-
-    let a = [1, 2, 3, 4];
-    appendZero(a) // Passing this variable, is like saying 'list = a', so it's passed to the function by REFERENCE
-
-    console.log(a) // [1, 2, 3, 4, 0] It now has the modification, changed from within the function. `.trim(),
-      documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', 'https://hackernoon.com/grasp-by-value-and-by-reference-in-javascript-7ed75efa1293'],
-      video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
-    },
-    sort: {
-      overview: `
-# Array.sort
-
-## Overview
-array.sort( [compareFunction] ) sorts an array in place -- mutating the array. There is no return value.
-
-The compareFunction is a function that is used by sort to evaluate sibling values in turn, and sort in the appropriate order.
-
-- If compareFunction(a, b) is less than 0, sort a to an index lower than b, i.e. a comes first.
-- If compareFunction(a, b) returns 0, leave a and b unchanged with respect to each other, but sorted with respect to all different elements. 
-- If compareFunction(a, b) is greater than 0, sort b to an index lower than a, i.e. b comes first.
-
-### Compare Function Setup
-function compare(a, b) {
-  if (a is less than b by some ordering criterion) {
-    return -1;
-  }
-  if (a is greater than b by the ordering criterion) {
-    return 1;
-  }
-  // a must be equal to b
-  return 0;
-}
-
-### Sample Compare Function
-function compareNumbers(a, b) {
-  return a - b;
-}
-
-### In actual code ...
-function compareNumbers(a, b) {
-  return a - b;
-}
-
-let array = [1,6,4,2,8,11,4,99,129];
-array.sort(compareNumbers);
-
-// Or all in line:
-array.sort( (a,b) => { 
-  return a - b; 
-});
-
-### Caveats and Notes
-
-- The speed and technique of the sort functionality internally is determined by JavaScript, so you can't depend on a consistent "complexity" or "time"
-- compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned then the sort order is undefined.`.trim(),
-      documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'],
-      video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
-    }  
-  };
-  //Sample resource object
-  // ReplaceWithCategoryName: {
-  //     overview:``.trim(),
-  //     documentation: ['', ''],
-  //     video: ''
-  //   }
->>>>>>> 008bf6758e1c7c99f3eecca7ff74829a9717e37c
 
 module.exports = resources;
