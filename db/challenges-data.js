@@ -146,6 +146,7 @@ QUnit.test('It should remove three elements from the array', assert => {
     instructions: `
 Write a function named createList that takes in an array of the current store inventory.
 The inventory is formatted like this:
+\`\`\`js
 [
     { name: 'apples', available: true },
     { name: 'pears', available: true },
@@ -153,6 +154,7 @@ The inventory is formatted like this:
     { name: 'bananas', available: true },
     { name: 'blueberries', available: false }
 ]
+\`\`\`
 This function should create another new array (the grocery list) and then use forEach to populate your grocery list based on the`.trim(),
     starterCode: `
 const createList = (availableItems) => {
@@ -549,6 +551,333 @@ assert.deepEqual(
 );
 });`.trim(),
     resources: resources.sort
+  }, 
+  {
+    category: 'string methods',
+    challengeNumber: 1,
+    instructions: `
+Write a function named howMuchPencil that takes in a string, as written on the side of a pencil.
+
+As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
+
+Your function should use slice within a loop and return an array of each successive string result from losing letters to the sharpener, until nothing is left.
+
+For example, if the input is \`'Welcome'\`, the output will be:
+\`['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']\`.`.trim(),
+    starterCode: `
+const howMuchPencil = (str) => {
+    let result = [];
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+QUnit.test('It should return a list of shortening words', assert => {
+    assert.deepEqual(
+        howMuchPencil('Welcome'), 
+        ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']
+    );
+    assert.deepEqual(howMuchPencil(''), ['']);
+    assert.deepEqual(howMuchPencil('abc'), ['abc', 'bc', 'c', '']);
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 2,
+    instructions: `
+Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
+
+For example, \`wordsToCharList('gregor')\` returns \`['g','r','e','g','o','r']\`.`.trim(),
+    starterCode: `
+const wordsToCharList = (str) => {
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+QUnit.test('It should return an array of individual letters', assert => {
+    assert.deepEqual(wordsToCharList('Gregor'), ['G', 'r', 'e', 'g', 'o', 'r']);
+    assert.deepEqual(wordsToCharList('hooray'), ['h', 'o', 'o', 'r', 'a', 'y']);
+    assert.deepEqual(wordsToCharList(''), []);
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 3,
+    instructions: `
+You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
+
+Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
+
+Use slice for this function, maybe more than once. The .indexOf() method may also be helpful.
+
+Do not use split for this function.`.trim(),
+    starterCode: `
+const listFoods = (recipe) => {
+    let result = [];
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+const gruffaloCrumble = {
+    name: 'How to make a Gruffalo Crumble',
+    ingredients: [
+        '1 medium-sized Gruffalo',
+        '8 pounds oats',
+        '2 pounds brown sugar',
+        '4 pounds flour',
+        '2 gallons pure maple syrup',
+        '16 cups chopped nuts',
+        '1 pound baking soda',
+        '1 pound baking powder',
+        '1 pound cinnamon',
+        '6 gallons melted butter',
+        '2 gallons fresh water',
+    ],
+    steps: [
+        'Pre-heat a large oven to 375',
+        'De-prickle the gruffalo',
+        'Sprinkle with cinnamon, sugar, flour, and nuts',
+        'Mix until evenly distributed',
+        'Grease a 3-foot x 3-foot casserole dish',
+        'Combine gruffalo compote with water to maintain moisture in the oven',
+        'Fold together remaining ingredients to make the crisp',
+        'Spread the crisp evenly over the gruffalo mixture',
+        'Bake for 12-15 hours',
+    ]
+};
+
+QUnit.test('It should return a list of foods', assert => {
+    assert.deepEqual(
+        listFoods(gruffaloCrumble), 
+        ['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']
+    );
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 4,
+    instructions: `
+You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
+
+Write a function named splitFoods that takes in the recipe and uses split to return a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
+
+You may also use other string or array methods.
+`.trim(),
+    starterCode: `
+const splitFoods = (recipe) => {
+    let result = [];
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+const gruffaloCrumble = {
+    name: 'How to make a Gruffalo Crumble',
+    ingredients: [
+        '1 medium-sized Gruffalo',
+        '8 pounds oats',
+        '2 pounds brown sugar',
+        '4 pounds flour',
+        '2 gallons pure maple syrup',
+        '16 cups chopped nuts',
+        '1 pound baking soda',
+        '1 pound baking powder',
+        '1 pound cinnamon',
+        '6 gallons melted butter',
+        '2 gallons fresh water',
+    ],
+    steps: [
+        'Pre-heat a large oven to 375',
+        'De-prickle the gruffalo',
+        'Sprinkle with cinnamon, sugar, flour, and nuts',
+        'Mix until evenly distributed',
+        'Grease a 3-foot x 3-foot casserole dish',
+        'Combine gruffalo compote with water to maintain moisture in the oven',
+        'Fold together remaining ingredients to make the crisp',
+        'Spread the crisp evenly over the gruffalo mixture',
+        'Bake for 12-15 hours',
+    ]
+};
+
+QUnit.test('It should return a list of foods', assert => {
+    assert.deepEqual(
+        splitFoods(gruffaloCrumble),
+        ['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']
+    );
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 5,
+    instructions: `
+Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. Fortunately for you, the action verbs are the first word of each action.
+
+Return a new array containing just the verbs. For example, \`['Mix until evenly distributed']\` returns \`['Mix']\`.`.trim(),
+    starterCode: `
+const stepActions = (recipe) => {
+    let result = [];
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+const gruffaloCrumble = {
+    name: 'How to make a Gruffalo Crumble',
+    ingredients: [
+        '1 medium-sized Gruffalo',
+        '8 pounds oats',
+        '2 pounds brown sugar',
+        '4 pounds flour',
+        '2 gallons pure maple syrup',
+        '16 cups chopped nuts',
+        '1 pound baking soda',
+        '1 pound baking powder',
+        '1 pound cinnamon',
+        '6 gallons melted butter',
+        '2 gallons fresh water',
+    ],
+    steps: [
+        'Pre-heat a large oven to 375',
+        'De-prickle the gruffalo',
+        'Sprinkle with cinnamon, sugar, flour, and nuts',
+        'Mix until evenly distributed',
+        'Grease a 3-foot x 3-foot casserole dish',
+        'Combine gruffalo compote with water to maintain moisture in the oven',
+        'Fold together remaining ingredients to make the crisp',
+        'Spread the crisp evenly over the gruffalo mixture',
+        'Bake for 12-15 hours',
+    ]
+};
+
+QUnit.test('It should return a list of recipe steps', assert => {
+    assert.deepEqual(
+        stepActions(gruffaloCrumble), 
+        ['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']
+    );
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 6,
+    instructions: `
+Write a function named removeEvenValues that, given an array of integers as input, deletes all even values from the array, leaving no 'gaps' behind.
+
+The array should be modified in-place.
+
+For example:
+\`\`\`js
+    const integers = [1, 2, 3, 4, 5, 6];
+    removeEvenValues(integers);
+    console.log(integers) will print [1, 3, 5]
+\`\`\``.trim(),
+    starterCode: `
+const removeEvenValues = (arr) => {
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+QUnit.test('It should remove the even numbers from the array', assert => {
+    let list = [1, 2, 3, 4, 5, 6];
+    removeEvenValues(list);
+    assert.deepEqual(list, [1, 3, 5]);
+
+    list = [6, 3, 19, 43, 12, 66, 43];
+    removeEvenValues(list);
+    assert.deepEqual(list, [3, 19, 43, 43]);
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 7,
+    instructions: `
+Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
+
+If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
+
+If the numberOfCharacters argument input is a negative number, the function should return the input string without any changes.
+
+For example:
+\`\`\`js
+removeLastCharacters('Gregor', 2) returns 'Greg'
+removeLastCharacters('Gregor', -2) returns 'Gregor'
+removeLastCharacters('Gregor', 9) returns ''
+\`\`\``.trim(),
+    starterCode: `
+const removeLastCharacters = (str, numberOfCharacters) => {
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+QUnit.test('It should shorten the string based on the first argument', assert => {
+    assert.equal(removeLastCharacters('Gregor', 2), 'Greg');
+});
+
+QUnit.test('It should return the complete string when passed a negative number', assert => {
+    assert.equal(removeLastCharacters('hello', -1), 'hello');
+    assert.equal(removeLastCharacters('wowow', -700), 'wowow');
+});
+
+QUnit.test('It should return an empty string when called with a number larger than the string length', assert => {
+    assert.equal(removeLastCharacters('hello', 12), '');
+    assert.equal(removeLastCharacters('', 1), '');
+    assert.equal(removeLastCharacters('a', 1), '');
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 8,
+    instructions: `
+Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
+`.trim(),
+    starterCode: `
+const totalSumCSV = (str) => {
+    let total = 0;
+    // Solution code here...
+    return total;
+};`.trim(),
+    qunitTest: `
+QUnit.test('It should add up the numbers contained within the string', assert => {
+    assert.equal(totalSumCSV('1,4,5,7,2'), 19);
+    assert.equal(totalSumCSV('147'), 147);
+});`.trim(),
+    resources: resources.stringMethods
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 9,
+    instructions: `
+Write a function named removeVowels that takes in a string and returns a new string where all the vowels of the original string have been removed.
+
+For example, \`removeVowels('gregor')\` returns \`'grgr'\`.`.trim(),
+    starterCode: `
+const removeVowels = (str) => {
+    // Solution code here...
+};`.trim(),
+    qunitTest: `
+QUnit.test('It should return the string without vowels', assert => {
+    assert.equal(removeVowels('gregor'), 'grgr');
+    assert.equal(removeVowels('asdf'), 'sdf');
+    assert.equal(removeVowels('why'), 'why');
+});`.trim(),
+    resources: resources.stringMethods
+
+  },
+  {
+    category: 'string methods',
+    challengeNumber: 10,
+    instructions: `
+Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
+
+For example, \`extractVowels('gregor')\` returns \`['grgr', 'eo']\`.
+
+Similarly, \`extractVowels('The quick brown fox')\` returns \`['Th qck brwn fx', 'eioou']\``.trim(),
+    starterCode: `
+const extractVowels = (str) => {
+    // Solution code here...
+};`.trim(),
+    qunitTest: `    
+QUnit.test('It should return the string without vowels', assert => {
+    assert.deepEqual(extractVowels('gregor'), ['grgr', 'eo']);
+    assert.deepEqual(extractVowels('The quick brown fox'), ['Th qck brwn fx', 'eioou']);
+});`.trim(),
+    resources: resources.stringMethods
   },
   //   {
   //     category: '',
@@ -558,7 +887,6 @@ assert.deepEqual(
   //     qunitTest: ``.trim(),
   //     resources: 
   //   },
-  
 ];
 
 module.exports = challenges;
