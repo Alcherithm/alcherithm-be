@@ -45,32 +45,31 @@ export const speaker = (message, callback) => {
       });
   });
 
-  // it('gets solutions by user id and groups by challenge number', async() => {
-  //   const solutions = await getSolutions();
-  //   const userIds = solutions.map(solution => solution.userId);
+  it('gets solutions by user id and groups by challenge number', async() => {
+    const user = getUser();
+    const solutions = await getSolutions({ userId: user._id });
   
-  //   return request(app)
-  //     .get(`/api/v1/solutions?userId=${userIds[0]}`)
-  //     .then(res => {
-  //       expect(res.body).toContainEqual(solutions.map(solution => ({
-  //         __v: expect.any(Number),
-  //         _id: expect.any(String),
-  //         solutions: [
-  //           {
-  //             solution: solution.solution,
-  //             passed: solution.passed,
-  //             createdAt: solution.createdAt
-  //           }
-  //         ],
-  //         challenge: {
-  //           category: expect.any(String),
-  //           challengeNumber: expect.any(Number),
-  //           instructions: expect.any(String)
-  //         }
-  //       })));
-  //     });
-  // });  
- 
+    return request(app)
+      .get(`/api/v1/solutions?userId=${user._id}`)
+      .then(res => {
+        expect(res.body).toEqual(expect.arrayContaining(solutions.map(solution => ({
+          _id: expect.any(String),
+          solutions: [
+            {
+              solution: solution.solution,
+              passed: solution.passed,
+              createdAt: solution.createdAt
+            }
+          ],
+          challenge: {
+            category: expect.any(String),
+            challengeNumber: expect.any(Number),
+            instructions: expect.any(String)
+          }
+        }))));
+      });
+  });
+
 
   it('gets solutions by challenge id and user id', async() => {
     const challenge = await getChallenge();
