@@ -13,6 +13,7 @@
 //video is a single url string
 
 
+<<<<<<< HEAD
 const resources =
 {
   forEach: {
@@ -21,6 +22,16 @@ const resources =
 
 #### Overview
 \`Array.forEach\` allows you to iterate through an array. Where a normal \`for\` loop is "iterative", \`forEach\` is more declarative or functional in nature.
+=======
+const resources = 
+  {
+    forEach: {
+      overview: `
+ # Array.forEach
+
+ ## Overview
+ Array.forEach allows you to iterate through an array. Where a normal 'for' loop is "iterative", forEach is more declarative or functional in nature.
+>>>>>>> 008bf6758e1c7c99f3eecca7ff74829a9717e37c
      
 It is implemented as a method on your array instance.
 \`\`\`js
@@ -154,6 +165,7 @@ The compareFunction is a function that is used by sort to evaluate sibling value
     if (a is less than b by some ordering criterion) {
       return -1;
     }
+<<<<<<< HEAD
     if (a is greater than b by the ordering criterion) {
       return 1;
     }
@@ -197,5 +209,72 @@ The compareFunction is a function that is used by sort to evaluate sibling value
 //     documentation: ['', ''],
 //     video: ''
 //   }
+=======
+
+    let a = [1, 2, 3, 4];
+    appendZero(a) // Passing this variable, is like saying 'list = a', so it's passed to the function by REFERENCE
+
+    console.log(a) // [1, 2, 3, 4, 0] It now has the modification, changed from within the function. `.trim(),
+      documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', 'https://hackernoon.com/grasp-by-value-and-by-reference-in-javascript-7ed75efa1293'],
+      video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
+    },
+    sort: {
+      overview: `
+# Array.sort
+
+## Overview
+array.sort( [compareFunction] ) sorts an array in place -- mutating the array. There is no return value.
+
+The compareFunction is a function that is used by sort to evaluate sibling values in turn, and sort in the appropriate order.
+
+- If compareFunction(a, b) is less than 0, sort a to an index lower than b, i.e. a comes first.
+- If compareFunction(a, b) returns 0, leave a and b unchanged with respect to each other, but sorted with respect to all different elements. 
+- If compareFunction(a, b) is greater than 0, sort b to an index lower than a, i.e. b comes first.
+
+### Compare Function Setup
+function compare(a, b) {
+  if (a is less than b by some ordering criterion) {
+    return -1;
+  }
+  if (a is greater than b by the ordering criterion) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
+
+### Sample Compare Function
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+### In actual code ...
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+let array = [1,6,4,2,8,11,4,99,129];
+array.sort(compareNumbers);
+
+// Or all in line:
+array.sort( (a,b) => { 
+  return a - b; 
+});
+
+### Caveats and Notes
+
+- The speed and technique of the sort functionality internally is determined by JavaScript, so you can't depend on a consistent "complexity" or "time"
+- compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned then the sort order is undefined.`.trim(),
+      documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'],
+      video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
+    }  
+  };
+  //Sample resource object
+  // ReplaceWithCategoryName: {
+  //     overview:``.trim(),
+  //     documentation: ['', ''],
+  //     video: ''
+  //   }
+>>>>>>> 008bf6758e1c7c99f3eecca7ff74829a9717e37c
 
 module.exports = resources;
