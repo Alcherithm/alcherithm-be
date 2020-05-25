@@ -174,4 +174,73 @@ arr.sort((a, b) => {
 );
 return arr;
 };`.trim(),
-}];
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[20]._id,
+  passed: true,
+  solution: `
+const howMuchPencil = (str) => {
+  let result = [];
+  for(let i = 0; i <= str.length; i++) {
+      const word = str.slice(i);
+      result.push(word);
+  }
+  return result;
+};`.trim(),
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[20]._id,
+  passed: true,
+  solution: `
+const wordsToCharList = (str) => {
+  let letters = str.split('');
+  return letters;
+};`.trim(),
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[21]._id,
+  passed: true,
+  solution: `
+const listFoods = (recipe) => {
+  let result = [];
+  recipe.ingredients.forEach(ingredient => {
+      const index = ingredient.indexOf(' ', 3);
+      const word = ingredient.slice(index + 1);
+      result.push(word);
+  });
+  return result;
+};`.trim(),
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[22]._id,
+  passed: false,
+  solution: `
+const splitFoods = (recipe) => {
+  let result = [];
+  recipe.ingredients.forEach(ingredient => {
+      const word = ingredient.split(' ', 2);
+      result.push(word);
+  });
+  return result;
+};`.trim(),
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[23]._id,
+  passed: false,
+  solution: `
+const stepActions = (recipe) => {
+  let result = [];
+  recipe.steps.forEach(step => {
+      const word = step.split(' ', 1);
+      return word;
+  }
+  );
+  return result.push();
+};`.trim(),
+},
+];
