@@ -1,13 +1,13 @@
-const { getSolutions, getUser, getChallenge } = require('../db/data-helpers');
+const { getSolutions, getUser, getChallenge, getAgent } = require('../db/data-helpers');
 const request = require('supertest');
 const app = require('../lib/app');
 
 describe('Solution routes', () => {
   it('creates a solution', async() => {
-    const user = await getUser();
+    const user = await getUser({ email: 'charlotte@domain.com' });
     const challenge = await getChallenge();
 
-    return request(app)
+    return getAgent()
       .post('/api/v1/solutions')
       .send({
         userId: user._id,
