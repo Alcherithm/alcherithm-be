@@ -45,7 +45,7 @@ const speaker = (message, callback) => {
       });
   });
 
-  it('gets solutions by user id and groups by challenge number', async() => {
+  it.skip('gets solutions by user id and groups by challenge number', async() => {
     const user = getUser();
     const solutions = await getSolutions({ userId: user._id });
   
