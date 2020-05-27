@@ -1068,7 +1068,7 @@ QUnit.test('It should return the string without vowels', assert => {
     category: 'object iteration',
     challengeNumber: 1, 
     instructions: `
-Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
+Write a function named getCourseKeys that takes in the courseInfo object (see test) and returns an array containing the keys for the courseInfo object.
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 
@@ -1081,10 +1081,10 @@ export const getCourseKeys = obj => {
 `.trim(),
     qunitTest: `
 const courseInfo = {
-name: 'Bootcamp II', 
-duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
-topics: ['CSS Grid', 'APIs', 'NodeJS', 'SQL', 'Components'],
-finalExam: true
+    name: 'Bootcamp II', 
+    duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
+    topics: ['CSS Grid', 'APIs', 'NodeJS', 'SQL', 'Components'],
+    finalExam: true
 };
 
 QUnit.test('It should return the keys from an object', assert => {
@@ -1100,19 +1100,84 @@ assert.deepEqual(
   {
     category: 'object iteration',
     challengeNumber: 2, 
-    instructions: ``.trim(),
+    instructions: `
+Use the characters data provided in the test.
+
+Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
+
+`.trim(),
+    starterCode: `
+export const getHouseNames = houses => {
+    // Solution code here...
+};    
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return an array of the names of the houses', assert => {
+    assert.deepEqual(
+        getHouseNames(houses), 
+        ['Stark', 'Tyrell', 'Arryn', 'Lannister', 'Baratheon', 'Targaryen', 'Greyjoy']
+    );
+});
+      
+`.trim(),
+    resources: resources.objectIteration
+  },
+  {
+    category: 'object iteration',
+    challengeNumber: 3, 
+    instructions: `
+
+    `.trim(),
     starterCode: ``.trim(),
     qunitTest: ``.trim(),
     resources: resources.objectIteration
   },
-      {
-        category: 'object iteration',
-        challengeNumber: 3, 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: resources.objectIteration
-      },
       {
         category: 'object iteration',
         challengeNumber: 4, 
