@@ -19,6 +19,18 @@ module.exports = async() => {
     email: 'will@domain.com',
     password: 'char13',
     cohort: 'Winter 2020'
+  }, {
+    firstName: 'Boo',
+    lastName: 'Oflaherty',
+    email: 'boo@domain.com',
+    password: 'butters14',
+    cohort: 'Spring 2020'
+  }, {
+    firstName: 'Ella',
+    lastName: 'Oflaherty',
+    email: 'ella@domain.com',
+    password: 'char14',
+    cohort: 'Spring 2020'
   }]);
 
   await Solution.create(solutions(users, codeChallenges));
