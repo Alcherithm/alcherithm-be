@@ -1872,6 +1872,299 @@ QUnit.test('It should return an array containing objects with name and total val
     resources: resources.map
   },
   {
+    category: 'filter',
+    challengeNumber: 1, 
+    instructions: `
+Write a function named oddValues that, given an array of integers as input, uses filter to return an array containing only the odd integers.
+
+For example, oddValues([1,2,3]) returns [1,3].
+
+    `.trim(),
+    starterCode: `
+export const oddValues = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return an array containing only odd integers', assert => {
+    assert.deepEqual(oddValues([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 3, 5, 7, 9]);
+    assert.deepEqual(oddValues([2, 3, 4, 179]), [3, 179]);
+    assert.deepEqual(oddValues([2, 4, 6, 8]), []);
+});
+
+`.trim(),
+    resources: resources.filter
+  },
+  {
+    category: 'filter',
+    challengeNumber: 2, 
+    instructions: `
+Write a function named filterStringsWithVowels that, given an array of strings as input, uses filter to return an array with only words that contain vowels.
+
+The callback function to filter should include or utilize a regular expression pattern.
+
+For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 'hound'].
+
+    `.trim(),
+    starterCode: `
+export const filterStringsWithVowels = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return an array containing only words that have vowels', assert => {
+    assert.deepEqual(
+        filterStringsWithVowels(['gregor', 'hound', 'xyz']),
+        ['gregor', 'hound']
+    );
+    assert.deepEqual(
+        filterStringsWithVowels(['a', 'b', 'cdefg']),
+        ['a', 'cdefg']
+    );
+    assert.deepEqual(
+        filterStringsWithVowels(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '']),
+        ['a', 'e', 'i', 'o', 'u']
+    );
+});
+
+    `.trim(),
+    resources: resources.filter
+  },
+  {
+    category: 'filter',
+    challengeNumber: 3, 
+    instructions: `
+Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
+
+For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
+
+`.trim(),
+    starterCode: `
+export const notInFirstArray = (forbiddenValues, arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const firstNumbers = [1, 2, 3];
+const secondNumbers = [1, 2, 3, 4];
+
+QUnit.test('It should return an array that includes any elements not in the first array', assert => {
+    assert.deepEqual(notInFirstArray(firstNumbers, secondNumbers), [4]);
+});
+
+`.trim(),
+    resources: resources.filter
+  },
+  {
+    category: 'filter',
+    challengeNumber: 4, 
+    instructions: `
+Write a function named getBaseStatGreaterThan that, given the snorlaxData provided in the test and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
+
+For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
+
+`.trim(),
+    starterCode: `
+export const getBaseStatGreaterThan = (arr, minBaseStat) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const snorlaxData = {
+    stats: [
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/6/',
+                name: 'speed',
+            },
+            effort: 5,
+            baseStat: 30,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/5/',
+                name: 'special-defense',
+            },
+            effort: 2,
+            baseStat: 110,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/4/',
+                name: 'special-attack',
+            },
+            effort: 9,
+            baseStat: 65,
+        },
+    ],
+    name: 'snorlax',
+    weight: 4600,
+};
+
+QUnit.test('It should return an array containing the stats that are greater than the input', assert => {
+    assert.deepEqual(
+        getBaseStatGreaterThan(snorlaxData.stats, 75),
+        [{ stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 }]
+    );
+    assert.deepEqual(getBaseStatGreaterThan(snorlaxData.stats, 110), []);
+});
+
+`.trim(),
+    resources: resources.filter
+  },
+  {
+    category: 'filter',
+    challengeNumber: 5, 
+    instructions: `
+Write a function named getStatName that, given the snorlaxData provided in the test and an integer as input, uses filter to return an array containing just the name of the stat with a baseStat greater than the integer.
+
+For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
+
+`.trim(),
+    starterCode: `
+export const getStatName = (arr, minBaseStat) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const snorlaxData = {
+    stats: [
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/6/',
+                name: 'speed',
+            },
+            effort: 5,
+            baseStat: 30,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/5/',
+                name: 'special-defense',
+            },
+            effort: 2,
+            baseStat: 110,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/4/',
+                name: 'special-attack',
+            },
+            effort: 9,
+            baseStat: 65,
+        },
+    ],
+    name: 'snorlax',
+    weight: 4600,
+};
+
+QUnit.test('It should return the name of the stats that exceed that maximum', assert => {
+    assert.deepEqual(getStatName(snorlaxData.stats, 50), ['special-defense', 'special-attack']);
+});
+
+`.trim(),
+    resources: resources.filter
+  },
+  {
+    category: 'filter',
+    challengeNumber: 6, 
+    instructions: `
+Write a function named getCharactersWithoutChildren that, given the array of characters provided in the test, uses filter to return an array of all characters without children.
+
+`.trim(),
+    starterCode: `
+export const getCharactersWithoutChildren = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const characters = [
+    {
+        name: 'Eddard',
+        spouse: 'Catelyn',
+        children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
+        house: 'Stark',
+    },
+    {
+        name: 'Jon',
+        spouse: 'Lysa',
+        children: ['Robin'],
+        house: 'Arryn',
+    },
+    {
+        name: 'Cersei',
+        spouse: 'Robert',
+        children: ['Joffrey', 'Myrcella', 'Tommen'],
+        house: 'Lannister',
+    },
+    {
+        name: 'Daenarys',
+        spouse: 'Khal Drogo',
+        children: ['Drogon', 'Rhaegal', 'Viserion'],
+        house: 'Targaryen',
+    },
+    {
+        name: 'Mace',
+        spouse: 'Alerie',
+        children: ['Margaery', 'Loras'],
+        house: 'Tyrell',
+    },
+    {
+        name: 'Sansa',
+        spouse: 'Tyrion',
+        house: 'Stark',
+    },
+    {
+        name: 'Jon',
+        spouse: null,
+        house: 'Snow',
+    },
+];
+
+QUnit.test('It should return an array containing characters who do not have children', assert => {
+    assert.deepEqual(
+        getCharactersWithoutChildren(characters), 
+        [
+            { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, 
+            { name: 'Jon', spouse: null, house: 'Snow' }
+        ]
+    );
+});
+
+`.trim(),
+    resources: resources.filter
+  },
+  {
+    category: 'filter',
+    challengeNumber: 7, 
+    instructions: `
+Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
+
+For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
+
+`.trim(),
+    starterCode: `
+export const evenOddNumericValues = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should remove non-integers and return "even" or "odd', assert => {
+    assert.deepEqual(evenOddNumericValues(['Gregor', 2, 4, 1]), ['even', 'even', 'odd']);
+    assert.deepEqual(evenOddNumericValues(['a', 'b', 'c']), []);
+});
+
+`.trim(),
+    resources: resources.filter
+  },
+  {
     category: '',
     challengeNumber: , 
     instructions: ``.trim(),
