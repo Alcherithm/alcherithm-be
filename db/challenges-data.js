@@ -1064,14 +1064,103 @@ QUnit.test('It should return the string without vowels', assert => {
 `.trim(),
     resources: resources.stringMethods
   },
-    {
-      category: '',
-      challengeNumber: , 
-      instructions: ``.trim(),
-      starterCode: ``.trim(),
-      qunitTest: ``.trim(),
-      resources: 
-    },
+  {
+    category: 'object iteration',
+    challengeNumber: 1, 
+    instructions: `
+Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
+
+For example: (['name', 'duration', 'topics', 'finalExam']).
+
+`.trim(),
+    starterCode: `
+export const getCourseKeys = obj => {
+// Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+const courseInfo = {
+name: 'Bootcamp II', 
+duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
+topics: ['CSS Grid', 'APIs', 'NodeJS', 'SQL', 'Components'],
+finalExam: true
+};
+
+QUnit.test('It should return the keys from an object', assert => {
+assert.deepEqual(
+    getCourseKeys(courseInfo), 
+    ['name', 'duration', 'topics', 'finalExam']
+);
+});
+
+`.trim(),
+    resources: resources.objectIteration
+  },
+  {
+    category: 'object iteration',
+    challengeNumber: 2, 
+    instructions: ``.trim(),
+    starterCode: ``.trim(),
+    qunitTest: ``.trim(),
+    resources: resources.objectIteration
+  },
+      {
+        category: 'object iteration',
+        challengeNumber: 3, 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: resources.objectIteration
+      },
+      {
+        category: 'object iteration',
+        challengeNumber: 4, 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: resources.objectIteration
+      },
+      {
+        category: 'object iteration',
+        challengeNumber: 5, 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: resources.objectIteration
+      },
+      {
+        category: 'object iteration',
+        challengeNumber: 6, 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: resources.objectIteration
+      },
+      {
+        category: 'object iteration',
+        challengeNumber: 7, 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: resources.objectIteration
+      },
+      {
+        category: 'object iteration',
+        challengeNumber: 8, 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: resources.objectIteration 
+      },
+      {
+        category: '',
+        challengeNumber: , 
+        instructions: ``.trim(),
+        starterCode: ``.trim(),
+        qunitTest: ``.trim(),
+        resources: 
+      },
 ];
 
 module.exports = challenges;
