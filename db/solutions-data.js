@@ -9,8 +9,20 @@ return word.toUpperCase();
 
 const speaker = (message, callback) => {
 return callback(message);
-};
-}`.trim()
+};`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[0]._id,
+  passed: true,
+  solution:`
+  export const greeting = (word) => {
+    return word.toUpperCase();
+  };
+  
+  export const speaker = (message, callback) => {
+    return callback(message);
+  };`.trim()
 },
 {
   userId: users[0]._id,
