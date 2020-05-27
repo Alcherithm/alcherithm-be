@@ -1172,52 +1172,447 @@ QUnit.test('It should return an array of the names of the houses', assert => {
     category: 'object iteration',
     challengeNumber: 3, 
     instructions: `
+Write a function named getHouseWords that uses Object.values to return a new array containing the words (mottos) of all of the houses in the data set provided in the test.
 
-    `.trim(),
-    starterCode: ``.trim(),
-    qunitTest: ``.trim(),
+`.trim(),
+    starterCode: `
+export const getHouseWords = houses => {
+    // Solution code here...
+}; 
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return an array of the words of all houses', assert => {
+    assert.deepEqual(
+        getHouseWords(houses), 
+        [
+            'Winter Is Coming',
+            'Growing Strong',
+            'A High as Honor',
+            'Hear Me Roar!',
+            'Ours is the Fury',
+            'Fire and Blood',
+            'We Do Not Sow'
+        ]
+    );
+});
+
+`.trim(),
     resources: resources.objectIteration
   },
-      {
-        category: 'object iteration',
-        challengeNumber: 4, 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: resources.objectIteration
-      },
-      {
-        category: 'object iteration',
-        challengeNumber: 5, 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: resources.objectIteration
-      },
-      {
-        category: 'object iteration',
-        challengeNumber: 6, 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: resources.objectIteration
-      },
-      {
-        category: 'object iteration',
-        challengeNumber: 7, 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: resources.objectIteration
-      },
-      {
-        category: 'object iteration',
-        challengeNumber: 8, 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: resources.objectIteration 
-      },
+  {
+    category: 'object iteration',
+    challengeNumber: 4, 
+    instructions: `
+Write a function named getHouseSizes that uses Object.entries to return a new array containing objects that each have the name of a house and the number of characters in the houses data set provided in the test.
+
+`.trim(),
+    starterCode: `
+export const getHouseSizes = houses => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return an array of the houses and number of characters', assert => {
+    assert.deepEqual(
+        getHouseSizes(houses), 
+        [
+            { house: 'Stark', members: 9 },
+            { house: 'Tyrell', members: 5 },
+            { house: 'Arryn', members: 3 },
+            { house: 'Lannister', members: 9 },
+            { house: 'Baratheon', members: 4 },
+            { house: 'Targaryen', members: 3 },
+            { house: 'Greyjoy', members: 3 }
+        ]
+    );
+});
+
+`.trim(),
+    resources: resources.objectIteration
+  },
+  {
+    category: 'object iteration',
+    challengeNumber: 5, 
+    instructions: `
+Write a function named getHouseHead that uses a dynamic object 
+property (obj[property]) to get the head of the specified house from the houses data set provided in the test.
+
+This function should take in the house data and a house name and return a the name of the house head.
+
+`.trim(),
+    starterCode: `
+export const getHouseHead = (houses, houseToFind) => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return head for a house', assert => {
+    assert.equal(
+        getHouseHead(houses, 'Stark'),
+        'Sansa'
+    );
+
+    assert.equal(
+        getHouseHead(houses, 'Tyrell'),
+        'none'
+    );
+
+    assert.equal(
+        getHouseHead(houses, 'Greyjoy'),
+        'Yara'
+    );
+});
+
+`.trim(),
+    resources: resources.objectIteration
+  },
+  {
+    category: 'object iteration',
+    challengeNumber: 6, 
+    instructions: `
+Write a function named totalCharacters that takes in the house data provided in the test and returns a count of all characters in all houses. 
+
+`.trim(),
+    starterCode: `
+export const totalCharacters = houses => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return the number of characters in all houses', assert => {
+    assert.equal(totalCharacters(houses), 36);
+});
+
+`.trim(),
+    resources: resources.objectIteration
+  },
+  {
+    category: 'object iteration',
+    challengeNumber: 7, 
+    instructions: `
+Write a function named getHouseWordsMapped that uses Object.values and .map to return the array of all house words from the data set provided in the test.
+
+`.trim(),
+    starterCode: `
+export const getHouseWordsMapped = houses => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return an array of the words of all houses using map', assert => {
+    assert.deepEqual(
+        getHouseWordsMapped(houses), 
+        [
+            'Winter Is Coming',
+            'Growing Strong',
+            'A High as Honor',
+            'Hear Me Roar!',
+            'Ours is the Fury',
+            'Fire and Blood',
+            'We Do Not Sow'
+        ]
+    );
+});
+
+`.trim(),
+    resources: resources.objectIteration
+  },
+  {
+    category: 'object iteration',
+    challengeNumber: 8, 
+    instructions: `
+Write a function named totalCharactersReduced that takes in the house data provided in the test and uses Object.values and .reduce to return the total character count of all characters in all houses.  
+
+`.trim(),
+    starterCode: `
+export const totalCharactersReduced = houses => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+let houses = {
+    Stark: {
+        characters: ['Eddard', 'Catelyn', 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Benjen', 'John'],
+        words: 'Winter Is Coming',
+        head: 'Sansa',
+        region: 'North'
+    },
+    Tyrell: {
+        characters: ['Mace', 'Alerie', 'Margaery', 'Loras', 'Olenna'],
+        words: 'Growing Strong',
+        head: 'none',
+        region: 'The Reach'
+    },
+    Arryn: {
+        characters: ['Jon', 'Lysa', 'Robin'],
+        words: 'A High as Honor',
+        head: 'Robin',
+        region: 'The Vale of Arryn'
+    },
+    Lannister: {
+        characters: ['Cersei', 'Tyrion', 'Jaime', 'Tywin', 'Lancel', 'Reginald', 'Joffrey', 'Myrcella', 'Tommen'],
+        words: 'Hear Me Roar!',
+        head: 'Tyrion',
+        region: 'The Westerlands'
+    },
+    Baratheon: {
+        characters: ['Robert', 'Stannis', 'Renly', 'Gendry'],
+        words: 'Ours is the Fury',
+        head: 'Gendry',
+        region: 'The Stormlands'
+    },
+    Targaryen: {
+        characters: ['Daenarys', 'Viserys', 'Aerys'],
+        words: 'Fire and Blood',
+        head: 'none',
+        region: 'The Crownlands'
+    },
+    Greyjoy: {
+        characters: ['Balon', 'Theon', 'Asha'],
+        words: 'We Do Not Sow',
+        head: 'Yara',
+        region: 'Iron Islands'
+    }
+};
+
+QUnit.test('It should return the number of characters in all houses using reduce', assert => {
+    assert.equal(totalCharactersReduced(houses), 36);
+});
+
+`.trim(),
+    resources: resources.objectIteration 
+  },
       {
         category: '',
         challengeNumber: , 
