@@ -28,7 +28,7 @@ module.exports = async() => {
   }, {
     firstName: 'Ella',
     lastName: 'Oflaherty',
-    email: 'boo@domain.com',
+    email: 'ella@domain.com',
     password: 'char14',
     cohort: 'Spring 2020'
   }]);

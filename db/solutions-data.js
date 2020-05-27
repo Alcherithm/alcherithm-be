@@ -171,7 +171,7 @@ return newArray;
 },
 {
   userId: users[3]._id,
-  challengeId: codeChallenges[6]._id,
+  challengeId: codeChallenges[5]._id,
   passed: true,
   solution:`
 const createList = (availableItems) => {
@@ -203,6 +203,56 @@ const fizzBuzz = (arr) => {
   });
   return arr;
 };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[8]._id,
+  passed: true,
+  solution:`
+  const appendTheEnd = (str) => {
+    return str + ' The end.';
+  };
+  `
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[8]._id,
+  passed: true,
+  solution:`
+  export const appendFirstToLast = (arr) => {
+    arr.push(arr[0]);
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[9]._id,
+  passed: true,
+  solution: `
+  export const addBirthYearProperty = (obj, year) => {
+    obj.yearBorn = year;
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[10]._id,
+  passed: true,
+  solution:`
+  const setStatusAsAuthor = (people) => {
+    people.forEach(person => {
+      person.isAuthor = true;
+    });
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[10]._id,
+  passed: true,
+  solution: `
+  const append = (arr1, arr2) => {
+    arr2.forEach(item => {
+      arr1.push(item);
+    });
+  };`.trim()
 },
 {
   userId: users[1]._id,
