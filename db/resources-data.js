@@ -45,7 +45,7 @@ It takes a callback as a parameter, which in turn receives the value and the ite
 - By default, forEach does not mutate the array
 - If you mutate it in process, you will have interesting issues`.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach', 'https://codeburst.io/javascript-the-difference-between-foreach-and-for-in-992db038e4c2'],
-    video: 'https://youtu.be/OYr_SaXiPy4'
+    video: 'OYr_SaXiPy4'
   },
   variables: {
     overview: `
@@ -133,7 +133,7 @@ Special attention should be paid to function calls. When an argument is passed i
 \`\`\`
     `.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', 'https://hackernoon.com/grasp-by-value-and-by-reference-in-javascript-7ed75efa1293'],
-    video: 'https://youtu.be/8lVbQYfS0Rg'
+    video: '8lVbQYfS0Rg'
   },
   sort: {
     overview: `
@@ -188,7 +188,7 @@ The compareFunction is a function that is used by sort to evaluate sibling value
 - The speed and technique of the sort functionality internally is determined by JavaScript, so you can't depend on a consistent "complexity" or "time"
 - compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned then the sort order is undefined.`.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'],
-    video: 'https://youtu.be/nP5S2RhbaB8'
+    video: 'nP5S2RhbaB8'
   },
   stringMethods: {
     overview: `
@@ -299,7 +299,7 @@ console.log(arr);
   // output: [ 'a', 'b', 99 ]
 \`\`\``,
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join'],
-    video: 'https://youtu.be/vGtLUc5NUO4'
+    video: 'vGtLUc5NUO4'
   }
 };
 //Sample resource object
