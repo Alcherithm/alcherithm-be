@@ -6,11 +6,11 @@
 //     video: ''
 //   }
 
-//Resources can be found in the README.MD and the ASSIGNMENT.MD files in the src folder for each challenge. Look in both to find the overview, links to resources/documentation, and videos
+//Resources can be found in the README.MD and the ASSIGNMENT.MD files in the src folder for each challenge. Look in both to find the overview, links to resources/documentation, and videos 
 //category name should match 'category' in resourcesData'
-//Overview: should be in MD with backticks and left justified. Will need 'trim()' at the end after the backticks
+//Overview: should be in MD with backticks and left justified. Will need 'trim()' at the end after the backticks. There should be a heading with the category name with ### and the other headings should all have ####. Code blocks can be escaped with \'\'\' 
 //documentation: is an array of url strings
-//video is a single url string
+//video is a single string with the Youtube id
 
 
 const resources =
@@ -43,9 +43,11 @@ It takes a callback as a parameter, which in turn receives the value and the ite
 - You cannot "return" a value
 - You cannot "break" or "continue" as you can with a for loop
 - By default, forEach does not mutate the array
-- If you mutate it in process, you will have interesting issues`.trim(),
+- If you mutate it in process, you will have interesting issues
+
+`.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach', 'https://codeburst.io/javascript-the-difference-between-foreach-and-for-in-992db038e4c2'],
-    video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
+    video: 'OYr_SaXiPy4'
   },
   variables: {
     overview: `
@@ -131,9 +133,10 @@ Special attention should be paid to function calls. When an argument is passed i
 
   console.log(a) // [1, 2, 3, 4, 0] It now has the modification, changed from within the function. 
 \`\`\`
-    `.trim(),
+
+`.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures', 'https://hackernoon.com/grasp-by-value-and-by-reference-in-javascript-7ed75efa1293'],
-    video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
+    video: '8lVbQYfS0Rg'
   },
   sort: {
     overview: `
@@ -188,7 +191,7 @@ The compareFunction is a function that is used by sort to evaluate sibling value
 - The speed and technique of the sort functionality internally is determined by JavaScript, so you can't depend on a consistent "complexity" or "time"
 - compareFunction(a, b) must always return the same value when given a specific pair of elements a and b as its two arguments. If inconsistent results are returned then the sort order is undefined.`.trim(),
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'],
-    video: 'https://www.youtube.com/playlist?list=PLVngfM2hsbi-L6G8qlWd8RyRbuTamHt3k'
+    video: 'nP5S2RhbaB8'
   },
   stringMethods: {
     overview: `
@@ -297,10 +300,414 @@ console.log(arr);
 arr.splice(2,3,99)
 console.log(arr);
   // output: [ 'a', 'b', 99 ]
-\`\`\``,
+\`\`\`
+
+`,
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join'],
-    video: null
+    video: 'vGtLUc5NUO4'
+  },
+  objectIteration: {
+    overview:`
+### Object Iteration
+
+#### Overview
+Just like with arrays, you'll often want to iterate over objects. But unlike arrays, objects have more than just one moving part ... and very often, they go deeper than just a single property.
+  \`\`\`js
+  let person = 
+  {
+    "name":"John",
+    "role":"Dad",
+    "interests": ["Coaching","Teaching"]
+  };
+  \`\`\`
+    
+To iterate over the properties of an object, there are various ways to iterate or traverse. These will only give you access to the current layer, however.  If you want to fully traverse the object and any sub-objects or arrays, you'll need to nest...
+
+**for ... in** ... a looping method for objects that acts much like an old fashioned "for" loop. 
+  \`\`\`js
+  for( let property in person ) { 
+    console.log(property, person[property]);
   }
+  \`\`\`
+    
+**Object.keys** ... this is an Object constructor prototype method, which takes in an object as an argument and returns an array of keys (properties)
+  \`\`\`js
+  let properties = Object.keys(person);
+  properties.forEach( property => {
+    console.log(property, person[property]);
+  })
+
+// Or more succinctly
+  Object.keys(person).forEach( property => {
+    console.log(property, person[property]);
+  })
+  \`\`\`
+    
+**Object.values** - Returns an iterable array of just the values from the object.
+  \`\`\`
+  console.log(Object.values(person));
+  // OUTPUT
+      [ 
+          'John', 
+          'Dad', 
+          [ 'Coaching', 'Teaching' ] 
+      ]
+      
+  // To Iterate it ...
+  Object.values(person).forEach(value => {
+    console.log(value);
+  })
+
+  // OUTPUT
+      John
+      Dad
+      ['Coaching', 'Teaching']
+  \`\`\`
+    
+**Object.entries** - Returns an array of each "Entry" as an an array with a key and value
+  \`\`\`
+  Object.entries(person).forEach(entry => {
+    console.log(entry);
+  })
+
+  // OUTPUT
+  [
+      [ 'name', 'John' ],
+      [ 'role', 'Dad' ],
+      [ 'interests', [ 'Coaching', 'Teaching' ] ],
+  ]
+  \`\`\`
+
+`.trim(),
+    documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'],
+    video: 'NGvpqw8PQZU'
+  },
+  map: {
+    overview:`
+### Array.map()
+
+#### Overview
+\`array.map( fn(v,i) {} )\` Much like\`array.forEach()\`, the \`array.map()\` function iterates over an array and runs a call back for each element. The callback receives the value and the index of the array element as a parameter.  
+
+The difference is that \`.map()\` will always return you a **new array** of the **same length** as the original array comprised of your return values
+
+#### Squaring a number
+  \`\`\`js
+  let numbers = [2,3,4,5];
+  
+  let squares = numbers.map( function(n,i) {
+    return n * n;
+  });
+  
+  // or as a snazzy arrow function ...
+  // let squares = numbers.map( n => n * n );
+  
+  console.log(squares); // [ 4, 9, 16, 25 ]
+  \`\`\`
+
+#### Changing the data shape
+  \`\`\`js
+  let people = [
+    { name: "John", role: "Dad" },
+    { name: "Cathy", role: "Mom" },
+    { name: "Zach", role: "Kid" },
+    { name: "Allie", role: "Kid" },
+  ];
+  
+  let folks = people.map( (person,i) => {
+    return person.name;
+  });
+  
+  console.log(folks); // [ "John", "Cathy", "Zach", "Allie" ]
+  \`\`\`
+
+**If you do nothing ... **
+  
+  \`\`\`js
+  let numbers = [2,3,4,5];
+  
+  let squares = numbers.map( function(n,i) {
+  });
+  
+  console.log(squares); // [undefined, undefined, undefined, undefined]
+  \`\`\`
+
+#### Caveats and Notes
+- The original array is never mutated
+- You always get back a new array
+- The array returned is always the same length as the original
+
+`.trim(),
+    documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map', 'https://medium.com/@JeffLombardJr/understanding-foreach-map-filter-and-find-in-javascript-f91da93b9f2c'],
+    video: 'erLq0zb01y4'
+  },
+  filter: {
+    overview:`
+### Array.filter()
+    
+#### Overview
+
+Similar to \`array.map()\`, the \`array.filter()\` function iterates over an array and runs a call back for each element. The callback receives the value and the index of the array element as a parameter.  
+
+\`filter.()\` will always return you a **new array**, comprised of elements from the original array that match your criteria -- which elements in the array match the filter condition?
+
+#### Even Numbers
+  \`\`\`js
+  let numbers = [2,3,4,5];
+  
+  let evens = numbers.filter( function(n,i) {
+    return !(n % 2);
+  });
+  
+  // or as a snazzy arrow function ...
+  // let evens = numbers.filter( n => !(n % 2) );
+  
+  console.log(evens); // [ 2, 4, 6 ]
+  \`\`\`
+
+#### Object Values
+  \`\`\`js
+  let people = [
+    { name: 'John', role: 'Dad' },
+    { name: 'Cathy', role: 'Mom' },
+    { name: 'Zach', role: 'Kid' },
+    { name: 'Allie', role: 'Kid' },
+  ];
+
+  let parents = people.filter(person => person.role !== "Kid");
+  console.log(parents);
+   // [ { name:'John' ... }, {name:'Cathy', ...} ]
+  \`\`\`
+
+**If you do nothing** ... you'll get back an empty array
+ 
+  \`\`\`js
+  let numbers = [2,3,4,5];
+  
+  let evens = numbers.filter( function(n,i) {
+  });
+  
+  console.log(evens); // []
+  \`\`\`
+
+#### Caveats and Notes
+- The original array is never mutated
+- You always get back a new array
+- The array returned is built by pushing values that evaluate & return \`true\`
+
+`.trim(),
+    documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter', 'https://medium.com/@JeffLombardJr/understanding-foreach-map-filter-and-find-in-javascript-f91da93b9f2c'],
+    video: 'ZCeKemUErbY'
+  },
+  reduce: {
+    overview:`
+### Array.reduce()
+
+#### Overview
+
+\`\`\`js
+const result = arr.reduce((accumulator, value, index) => {
+  // ...
+}, initialValue);
+\`\`\` 
+
+#### Basics
+
+\`.reduce()\` iterates over an array and returns the last version of the "accumulator" ... in each iteration, based on the value and/or idx of the current element in the array, you have the opportunity to modify and return the accumulator. After the last iteration of the array, that accumulator value is returned to the caller. \`initialValue\` represents the value of the accumulator in the first iteration.
+
+**Add up all the numbers in an array**
+
+In this example, the accumulator starts out as 0 (the initial value) and for each iteration, we simply add onto it, and then return it.  That return value gets fed into the next iteration so that you can continually operate on it and return the final value.
+
+\`\`\`js
+const numbers = [1,2,3,4];
+const sum = numbers.reduce((accumulator, value, idx) => {
+  accumulator = accumulator + value;
+  return accumulator;
+}, 0);
+
+// sum would be 10
+\`\`\`
+
+**Change the shape of your data**
+
+In this example, we'll take an array of objects and return back an object, keyed by the 'name' property. The initial value is an empty object, and as we iterate, we create a new entry in it, returning it as we build on. 
+
+  \`\`\`js
+  const people = [
+    { name:'Fred', role:'Developer' },
+    { name:'Suzy', role:'Developer' },
+    { name:'Gina', role:'Manager' },
+    { name:'Jim', role:'Support' }
+  ];
+  
+  const folks = people.reduce((accumulator, person, idx) => {
+    accumulator[person.name] = person.role;
+    return accumulator;
+  }, {});
+  
+  // folks: 
+  { 
+    Fred: 'Developer',
+    Suzy: 'Developer',
+    Gina: 'Manager',
+    Jim: 'Support'
+  }
+  
+  \`\`\`
+
+`.trim(),
+    documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce', 'https://medium.com/@JeffLombardJr/understanding-foreach-map-filter-and-find-in-javascript-f91da93b9f2c'],
+    video: '_uICFozlNYE'
+  },
+  nestedForLoops: {
+    overview:`
+### Nested For Loops
+
+#### Overview
+We can use nested for loops to iterate over each element in another array.
+
+For example, say you had a group of people, and you wanted to everyone to take turns shaking everyone's hand (other than themselves, of course). 
+
+Visualize people sitting in a row.  The first person stands up, walks in front and shakes each of the other's hands, and then sits down at the end of the row. Then the next person gets up and does the same thing ... until everyone has gone through the process ...
+
+\`\`\`js
+let shakeHands = list => {
+  for( let i = 0; i <= list.length - 1; i++ ) {
+    for( let j = 0; j <= list.length - 1; j++ ) {
+      if(list[i] !== list[j]) {
+        console.log(list[i] + ' shakes ' + list[j] + ''s hand.');
+      }
+    }
+  }
+};
+
+let people = ['Kookla', 'Fran', 'Ollie'];
+
+shakeHands(people);
+
+// Output:
+Kookla shakes Fran's hand
+Kookla shakes Ollie's hand
+Fran shakes Kookla's hand
+Fran shakes Ollie's hand
+Ollie shakes Kookla's hand
+Ollie shakes Fran's hand
+\`\`\`
+
+Alternatively, you can have 2 different arrays that loop over each other. Here, we'll create a simple grid, like a tic-tac-toe board.  First we'll iterate over the 'height' which creates the rows, and then over the 'width', to create the columns.  
+
+\`\`\`js
+let drawGrid = (height,width) => {
+  for(let i = 1; i <= height; i++) {
+    let row = [];
+    let char = i === height ? ' ' : '_'; // On the bottom row, we need to use spaces instead of "_"
+    for(let j = 1; j <= width; j++) {
+      row.push(char);
+    }
+    console.log(row.join('|'));
+  }
+};
+drawGrid(3,,3)
+
+// Output:
+
+_|_|_
+_|_|_
+ | | 
+
+ \`\`\`
+
+#### Caveats and Notes
+- Looping an array over itself like the first example can lead to massive performance problems!
+- Make sure that in your nested loops that you use unique and meaningful variable names.
+
+### 2 Dimensional Arrays
+
+#### Overview
+
+One practical application of using nested for loops is working with multi-dimensional arrays. 
+
+If that sounds scary, fear not! The wording may be unfamiliar to you, but the code is very similar to what you already know. 
+
+A 2 Dimensional array is simply an array whose elements are also arrays. 
+
+It is an array of arrays. That is, a list of lists. A box containing boxes that contain items. 
+
+\`\`\`js
+let a = [ [2,4,6,8], [1,3,7,9], [4,3,8,6] ];
+
+// Many people visualize this as a grid, thinking of it as rows and columns...
+
+let a = [
+  [2,4,6,8],
+  [1,3,7,9],
+  [4,3,8,6]
+];
+\`\`\`
+
+Lets loop over that and print out the grid ... the outer loop represents the elements in the array \`a\`, while the inner loop represents each item in the array found at each position in \`a\`
+
+\`\`\`js
+let drawTable = (table) => {
+  for(let i = 0; i <= table.length - 1; i++) {
+    let line = '';
+    for(let j = 0; j <= table[i].length - 1; j++){
+      line = line + table[i][j];
+    }
+    console.log(line);
+  }
+};
+drawTable(a);
+
+// Output: 
+
+  2468
+  1379
+  4386
+\`\`\`
+
+In this example, we'll try and figure out which items in the arrays "touch" each other.  Look at the output from the previous example, and think about which numbers touch which each other (vertically, horizontally, and diagonally) when you visualize it as that grid.  By analyzing which are one above or below and one left or right, we can loop through and figure this out.
+
+\`\`\`js
+let touches = (table) => {
+  for(let i = 0; i <= table.length - 1; i++) {
+    for(let j = 0; j <= table[i].length - 1; j++){
+      let touches = [];
+      for(let x = i - 1; x <= i + 1; x++) {
+        for(let z = j - 1; z <= j + 1; z++) {
+          if(x === i && j === z) {continue;} // skip ourself
+          table[x] && table[x][z] && touches.push(table[x][z]);
+        }
+      }
+      console.log('table[i][j] + ' touches ' touches');
+    }
+  }
+};
+
+touches(a);
+
+// OUTPUT:
+
+    2 touches 4,1,3
+    4 touches 2,6,1,3,7
+    6 touches 4,8,3,7,9
+    8 touches 6,7,9
+    1 touches 2,4,3,4,3
+    3 touches 2,4,6,1,7,4,3,8
+    7 touches 4,6,8,3,9,3,8,6
+    9 touches 6,8,7,8,6
+    4 touches 1,3,3
+    3 touches 1,3,7,4,8
+    8 touches 3,7,9,3,6
+    6 touches 7,9,8
+    \`\`\`
+
+`.trim(),
+    documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array'],
+    video: 'VgIJzgTTEq4'
+  }
+
 };
 //Sample resource object
 // ReplaceWithCategoryName: {
