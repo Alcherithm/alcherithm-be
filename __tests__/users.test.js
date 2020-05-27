@@ -14,17 +14,4 @@ describe('user routes', () => {
         expect(res.body).toEqual(users);
       });
   });
-
-  it('gets an user by id', async() => {
-    const user = await getUser();
-
-    return request(app)
-      .get(`/api/v1/users/${user._id}`)
-      .then(res => {
-        expect(res.body).toEqual({
-          ...user
-        });
-      });
-  });
-
 });
