@@ -10,8 +10,9 @@
 //   }
 // ];
 
-//NOTES: category = category name (each branch in the BC2 repo is a new category). Try to keep it short-one word preferred
-//instructions, starterCode, and qunitTest all need to be wrapped in backticks and left justified. '.trim()' should be added after the backticks. 
+//NOTES: category = category name (each branch in the BC2 repo is a new category). 
+//instructions, starterCode, and qunitTest all need to be wrapped in backticks and left justified. '.trim()' should be added after the backticks. Make sure there is a new line space before .trim
+//read the instructions and tests carefully- some of the wording needs to be updated since it references past challenges. Instructions should make sense on their own. Make sure to include any data sets needed to include the challenge from the test data (sometimes the same data set is used for many tests)
 //All tests should begin with 'QUnit.test'. There should be no skipped tests. 
 //resources are in resourcesData.js and can be called in as an object- resources.CATEGORYNAME
 
