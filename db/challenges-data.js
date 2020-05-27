@@ -2165,6 +2165,437 @@ QUnit.test('It should remove non-integers and return "even" or "odd', assert => 
     resources: resources.filter
   },
   {
+    category: 'reduce',
+    challengeNumber: 1, 
+    instructions: `
+Write a function named countNumberOfElements that, given an array as input, uses reduce to count the number of elements in the array.
+
+Note: You may not use the array's built-in length property.
+
+`.trim(),
+    starterCode: `
+export const countNumberOfElements = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return the length of the array', assert => {
+    assert.equal(countNumberOfElements([1, 2, 3, 4, 5]), 5);
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 2, 
+    instructions: `
+Write a function named eyeColorTally that, given the Star Wars data in the test below, uses reduce to return an object with a key for each eye color and whose value is the number of characters having that 
+eye color:
+
+{ blue: 1, yellow: 2, red: 1, brown: 1 }
+
+`.trim(),
+    starterCode: `
+export const eyeColorTally = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const starWarsData = [{
+    name: 'Luke Skywalker',
+    height: '172',
+    mass: '77',
+    hair_color: 'blond',
+    skin_color: 'fair',
+    eye_color: 'blue',
+    birth_year: '19BBY',
+    gender: 'male',
+},
+{
+    name: 'C-3PO',
+    height: '167',
+    mass: '75',
+    hair_color: 'n/a',
+    skin_color: 'gold',
+    eye_color: 'yellow',
+    birth_year: '112BBY',
+    gender: 'n/a'
+},
+{
+    name: 'R2-D2',
+    height: '96',
+    mass: '32',
+    hair_color: 'n/a',
+    skin_color: 'white, blue',
+    eye_color: 'red',
+    birth_year: '33BBY',
+    gender: 'n/a'
+},
+{
+    name: 'Darth Vader',
+    height: '202',
+    mass: '136',
+    hair_color: 'none',
+    skin_color: 'white',
+    eye_color: 'yellow',
+    birth_year: '41.9BBY',
+    gender: 'male'
+},
+{
+    name: 'Leia Organa',
+    height: '150',
+    mass: '49',
+    hair_color: 'brown',
+    skin_color: 'light',
+    eye_color: 'brown',
+    birth_year: '19BBY',
+    gender: 'female'
+}];
+
+QUnit.test('It should return an object with eye color counts', assert => {
+    assert.deepEqual(
+        eyeColorTally(starWarsData), 
+        { blue: 1, yellow: 2, red: 1, brown: 1 }
+    );
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 3, 
+    instructions: `
+Write a function named eyeColorNames that, given the Star Wars data provided in the test below, uses reduce to return an object with a key for each eye color and whose value an array of character names having that eye color:
+
+{ blue: 1, yellow: 2, red: 1, brown: 1 }
+
+`.trim(),
+    starterCode: `
+export const eyeColorNames = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const starWarsData = [{
+    name: 'Luke Skywalker',
+    height: '172',
+    mass: '77',
+    hair_color: 'blond',
+    skin_color: 'fair',
+    eye_color: 'blue',
+    birth_year: '19BBY',
+    gender: 'male',
+},
+{
+    name: 'C-3PO',
+    height: '167',
+    mass: '75',
+    hair_color: 'n/a',
+    skin_color: 'gold',
+    eye_color: 'yellow',
+    birth_year: '112BBY',
+    gender: 'n/a'
+},
+{
+    name: 'R2-D2',
+    height: '96',
+    mass: '32',
+    hair_color: 'n/a',
+    skin_color: 'white, blue',
+    eye_color: 'red',
+    birth_year: '33BBY',
+    gender: 'n/a'
+},
+{
+    name: 'Darth Vader',
+    height: '202',
+    mass: '136',
+    hair_color: 'none',
+    skin_color: 'white',
+    eye_color: 'yellow',
+    birth_year: '41.9BBY',
+    gender: 'male'
+},
+{
+    name: 'Leia Organa',
+    height: '150',
+    mass: '49',
+    hair_color: 'brown',
+    skin_color: 'light',
+    eye_color: 'brown',
+    birth_year: '19BBY',
+    gender: 'female'
+}];
+
+QUnit.test('It should return an object with eye color names', assert => {
+    assert.equal(
+        eyeColorNames(starWarsData), 
+        { 
+            blue: ['Luke Skywalker'], 
+            yellow: ['C-3PO', 'Darth Vader'], 
+            red: ['R2-D2'], 
+            brown: ['Leia Organa'] 
+        }
+    );
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 4, 
+    instructions: `
+Write a function named countNumberOfChildren that, given the array of characters provided in the test, uses reduce to return the total number of children in the data set.
+
+`.trim(),
+    starterCode: `
+export const countNumberOfChildren = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const characters = [
+    {
+        name: 'Eddard',
+        spouse: 'Catelyn',
+        children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
+        house: 'Stark',
+    },
+    {
+        name: 'Jon',
+        spouse: 'Lysa',
+        children: ['Robin'],
+        house: 'Arryn',
+    },
+    {
+        name: 'Cersei',
+        spouse: 'Robert',
+        children: ['Joffrey', 'Myrcella', 'Tommen'],
+        house: 'Lannister',
+    },
+    {
+        name: 'Daenarys',
+        spouse: 'Khal Drogo',
+        children: ['Drogon', 'Rhaegal', 'Viserion'],
+        house: 'Targaryen',
+    },
+    {
+        name: 'Mace',
+        spouse: 'Alerie',
+        children: ['Margaery', 'Loras'],
+        house: 'Tyrell',
+    },
+    {
+        name: 'Sansa',
+        spouse: 'Tyrion',
+        house: 'Stark',
+    },
+    {
+        name: 'Jon',
+        spouse: null,
+        house: 'Snow',
+    },
+];
+
+QUnit.test('It should return the total number of children', assert => {
+    assert.equal(countNumberOfChildren(characters), 14);
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 5, 
+    instructions: `
+Write a function that, given an array of numbers as input, uses reduce to calculate the array's average value.
+
+Hint: The accumulator should begin as { count: 0, sum: 0 }
+
+`.trim(),
+    starterCode: `
+export const calculateAverage = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return the average of the numbers in the array', assert => {
+    assert.equal(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85]), 64);
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 6, 
+    instructions: `
+Write a function named countPrimeNumbers that, given an array elements as input, uses reduce to count the number of elements that are prime numbers.
+
+You are welcome to use the provided isPrime function.
+
+`.trim(),
+    starterCode: `
+const isPrime = (value) => {
+    for(let i = 2; i < value; i++) {
+        if(value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+};
+
+export const countPrimeNumbers = (arr) => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return a count of the prime numbers in the array', assert => {
+    assert.equal(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8]), 3);
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 7, 
+    instructions: `
+Write a function named effortStats that, given the snorlaxData in the test uses reduce to return an object with the minimum and maximum effort level in the format:
+
+Hint: The accumulator should begin as { min: 0, max: 0 }
+
+`.trim(),
+    starterCode: `
+export const effortStats = (statName, arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const snorlaxData = {
+    stats: [
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/6/',
+                name: 'speed',
+            },
+            effort: 5,
+            baseStat: 30,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/5/',
+                name: 'special-defense',
+            },
+            effort: 2,
+            baseStat: 110,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/4/',
+                name: 'special-attack',
+            },
+            effort: 9,
+            baseStat: 65,
+        },
+    ],
+    name: 'snorlax',
+    weight: 4600,
+};
+
+QUnit.test('It should return effort stats that match the input', assert => {
+    assert.deepEqual(
+        effortStats(snorlaxData.stats), 
+        { min: 2, max: 9 }
+    );
+});
+
+    `.trim(),
+    resources: resources.reduce
+  },
+  {
+    category: 'reduce',
+    challengeNumber: 8, 
+    instructions: `
+Write a function named extractChildren that, given the array of characters from the test, accomplishes the following:
+
+1) Uses filter to return an array of the characters that contain the letter 'a' in their name
+
+2) Then, uses reduce to return an array of all the children's names in the filtered array
+
+    `.trim(),
+    starterCode: `
+export const extractChildren = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const characters = [
+    {
+        name: 'Eddard',
+        spouse: 'Catelyn',
+        children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
+        house: 'Stark',
+    },
+    {
+        name: 'Jon',
+        spouse: 'Lysa',
+        children: ['Robin'],
+        house: 'Arryn',
+    },
+    {
+        name: 'Cersei',
+        spouse: 'Robert',
+        children: ['Joffrey', 'Myrcella', 'Tommen'],
+        house: 'Lannister',
+    },
+    {
+        name: 'Daenarys',
+        spouse: 'Khal Drogo',
+        children: ['Drogon', 'Rhaegal', 'Viserion'],
+        house: 'Targaryen',
+    },
+    {
+        name: 'Mace',
+        spouse: 'Alerie',
+        children: ['Margaery', 'Loras'],
+        house: 'Tyrell',
+    },
+    {
+        name: 'Sansa',
+        spouse: 'Tyrion',
+        house: 'Stark',
+    },
+    {
+        name: 'Jon',
+        spouse: null,
+        house: 'Snow',
+    },
+];
+
+QUnit.test('It should return an array containing the names of the children', assert => {
+    assert.deepEqual(
+        extractChildren(characters), 
+        ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras']
+    );
+});
+
+`.trim(),
+    resources: resources.reduce
+  },
+  
+  {
     category: '',
     challengeNumber: , 
     instructions: ``.trim(),
