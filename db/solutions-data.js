@@ -4,11 +4,11 @@ module.exports = (users, codeChallenges) => [{
   passed: true,
   solution: `
 const greeting = word => {
-return word.toUpperCase();
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-return callback(message);
+  return callback(message);
 };`.trim()
 },
 {
@@ -16,47 +16,12 @@ return callback(message);
   challengeId: codeChallenges[0]._id,
   passed: true,
   solution:`
-  export const greeting = (word) => {
-    return word.toUpperCase();
+const greeting = (word) => {
+  return word.toUpperCase();
   };
   
-  export const speaker = (message, callback) => {
-    return callback(message);
-  };`.trim()
-},
-{
-  userId: users[0]._id,
-  challengeId: codeChallenges[1]._id,
-  passed: true,
-  solution: `
-const addValues = (arr, value) => {
-arr.push(value);
-};
-
-const addNumbers = (num, arr, times, callback) => {
-for(let i = 0; i < times; i++) {
-    callback(arr, num);
-}
-return arr;
-};`.trim()
-},
-{
-  userId: users[0]._id,
-  challengeId: codeChallenges[2]._id,
-  passed: true,
-  solution: `
-const removeOne = (num, arr) => {
-if(num % 3 === 2) {
-    arr.pop();  
-}
-};
-
-const removeElements = (arr, callback) => {
-for(let i = 0; i < arr.length; i++) {
-    const arrayItem = arr[i];
-    callback(arrayItem, arr);
-}
-return arr;
+const speaker = (message, callback) => {
+  return callback(message);
 };`.trim()
 },
 {
@@ -65,13 +30,64 @@ return arr;
   passed: true,
   solution: `
 const greeting = word => {
-return word.toUpperCase();
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-return callback(message);
+  return callback(message);
 };
 }`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[1]._id,
+  passed: true,
+  solution: `
+const addValues = (arr, value) => {
+  arr.push(value);
+};
+
+const addNumbers = (num, arr, times, callback) => {
+for(let i = 0; i < times; i++) {
+  callback(arr, num);
+}
+return arr;
+};`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[1]._id,
+  passed: true,
+  solution: `
+const addValues = (arr, value) => {
+arr.push(value);
+};
+  
+const addNumbers = (num, arr, times, callback) => {
+for(let i = 0; i < times; i++) {
+  callback(arr, num);
+}
+return arr;
+};`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[2]._id,
+  passed: true,
+  solution: `
+const removeOne = (num, arr) => {
+if(num % 3 === 2) {
+  arr.pop();  
+}
+};
+
+const removeElements = (arr, callback) => {
+for(let i = 0; i < arr.length; i++) {
+  const arrayItem = arr[i];
+  callback(arrayItem, arr);
+}
+return arr;
+};`.trim()
 },
 {
   userId: users[1]._id,
@@ -79,17 +95,113 @@ return callback(message);
   passed: true,
   solution: `
 const removeOne = (num, arr) => {
-if(num % 3 === 2) {
-    arr.pop();  
+  if(num % 3 === 2) {
+  arr.pop();  
 }
 };
 
 const removeElements = (arr, callback) => {
 for(let i = 0; i < arr.length; i++) {
-    const arrayItem = arr[i];
-    callback(arrayItem, arr);
+  const arrayItem = arr[i];
+  callback(arrayItem, arr);
 }
 return arr;
+};`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[2]._id,
+  passed: true,
+  solution: `
+const removeOne = (num, arr) => {
+  const result = num % 3;
+  if(result === 2) {
+  arr.pop();
+  }
+};
+  
+const removeElements = (arr, callback) => {
+  for(let i = 0; i < arr.length; i++) {
+  callback(arr[i], arr);
+}
+return arr;
+};`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[3]._id,
+  passed: true,
+  solution: `
+const removeWithForEach = (arr, callback) => {
+  arr.forEach(element => {
+  callback(arr[element], arr);
+});
+return arr;
+};`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[4]._id,
+  passed: true,
+  solution: `
+const removeWithAnon = (arr) => {
+  arr.forEach((num) => {
+  const result = num % 3;
+  if(result === 2) {
+  arr.pop();
+}
+});
+return arr;
+};`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[5]._id,
+  passed: true,
+  solution:`
+const createList = (availableItems) => {
+const newArray = [];
+  availableItems.forEach((fruit) => {
+  if(fruit.available) {
+  newArray.push(fruit.name);
+}
+});
+return newArray;
+};`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[6]._id,
+  passed: true,
+  solution:`
+const createList = (availableItems) => {
+const newArray = [];
+  availableItems.forEach((fruit) => {
+  if(fruit.available) {
+  newArray.push(fruit.name);
+}
+});
+  return newArray;
+};`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[6]._id,
+  passed: true,
+  solution:`
+const fizzBuzz = (arr) => {
+  arr.forEach((num, index) => {
+  if(num % 3 === 0) {
+    arr.splice(index, 1, 'Fizz');
+  }
+  if(num % 5 === 0) {
+    arr.splice(index, 1, 'Buzz');
+  }
+  if(num % 3 === 0 && num % 5 === 0) {
+    arr.splice(index, 1, 'Fizz Buzz');
+  }
+  });
+  return arr;
 };`.trim()
 },
 {
