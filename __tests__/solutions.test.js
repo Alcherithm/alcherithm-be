@@ -48,7 +48,7 @@ const speaker = (message, callback) => {
   it('gets solutions by user id and groups by challenge number', async() => {
     const user = getUser();
     const solutions = await getSolutions({ userId: user._id });
-  
+
     return request(app)
       .get(`/api/v1/solutions?userId=${user._id}`)
       .then(res => {
@@ -58,18 +58,15 @@ const speaker = (message, callback) => {
             {
               solution: solution.solution,
               passed: solution.passed,
-              createdAt: solution.createdAt
+              date: solution.date
             }
           ],
-          challenge: {
-            category: expect.any(String),
-            challengeNumber: expect.any(Number),
-            instructions: expect.any(String)
-          }
+          category: expect.any(String),
+          challengeNumber: expect.any(Number),
+          instructions: expect.any(String)
         }))));
       });
   });
-
 
   it.skip('gets solutions by challenge id and user id', async() => {
     const challenge = await getChallenge();
@@ -88,7 +85,6 @@ const speaker = (message, callback) => {
         });
       });
   });
-
 
   it('gets solutions by challenge id', async() => {
     const challenge = await getChallenge();
