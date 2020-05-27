@@ -576,7 +576,7 @@ let shakeHands = list => {
   for( let i = 0; i <= list.length - 1; i++ ) {
     for( let j = 0; j <= list.length - 1; j++ ) {
       if(list[i] !== list[j]) {
-        console.log(\`${list[i]} shakes ${list[j]}'s hand.\`);
+        console.log(list[i] + ' shakes ' + list[j] + ''s hand.');
       }
     }
   }
@@ -680,7 +680,7 @@ let touches = (table) => {
           table[x] && table[x][z] && touches.push(table[x][z]);
         }
       }
-      console.log(\`${table[i][j]} touches ${touches}\`);
+      console.log('table[i][j] + ' touches ' touches');
     }
   }
 };
