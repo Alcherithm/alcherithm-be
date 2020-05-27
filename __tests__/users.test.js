@@ -15,14 +15,17 @@ describe('user routes', () => {
       });
   });
 
-  it('gets an user by id', async() => {
+  it('gets challenge counts for a user', async() => {
     const user = await getUser();
 
     return request(app)
-      .get(`/api/v1/users/${user._id}`)
+      .get(`/api/v1/users/${user._id}/counts`)
       .then(res => {
         expect(res.body).toEqual({
-          ...user
+          attempted: expect.any(Number),
+          failed: expect.any(Number),
+          passed: expect.any(Number), 
+          totalNumberOfChallenges: expect.any(Number)
         });
       });
   });
