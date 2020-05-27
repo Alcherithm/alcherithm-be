@@ -1064,14 +1064,14 @@ QUnit.test('It should return the string without vowels', assert => {
 `.trim(),
     resources: resources.stringMethods
   },
-  //   {
-  //     category: '',
-  //     challengeNumber: , 
-  //     instructions: ``.trim(),
-  //     starterCode: ``.trim(),
-  //     qunitTest: ``.trim(),
-  //     resources: 
-  //   },
+    {
+      category: '',
+      challengeNumber: , 
+      instructions: ``.trim(),
+      starterCode: ``.trim(),
+      qunitTest: ``.trim(),
+      resources: 
+    },
 ];
 
 module.exports = challenges;
