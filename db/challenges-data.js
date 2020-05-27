@@ -2882,15 +2882,15 @@ QUnit.test('It should return the total count for each row', assert => {
 
 `.trim(),
     resources: resources.nestedForLoops
-  },
-  {
-    category: '',
-    challengeNumber: , 
-    instructions: ``.trim(),
-    starterCode: ``.trim(),
-    qunitTest: ``.trim(),
-    resources: 
-  },
+  }
+//   {
+//     category: '',
+//     challengeNumber: , 
+//     instructions: ``.trim(),
+//     starterCode: ``.trim(),
+//     qunitTest: ``.trim(),
+//     resources: 
+//   },
 ];
 
 module.exports = challenges;
