@@ -6,11 +6,11 @@
 //     video: ''
 //   }
 
-//Resources can be found in the README.MD and the ASSIGNMENT.MD files in the src folder for each challenge. Look in both to find the overview, links to resources/documentation, and videos
+//Resources can be found in the README.MD and the ASSIGNMENT.MD files in the src folder for each challenge. Look in both to find the overview, links to resources/documentation, and videos 
 //category name should match 'category' in resourcesData'
-//Overview: should be in MD with backticks and left justified. Will need 'trim()' at the end after the backticks
+//Overview: should be in MD with backticks and left justified. Will need 'trim()' at the end after the backticks. There should be a heading with the category name with ### and the other headings should all have ####. Code blocks can be escaped with \'\'\' 
 //documentation: is an array of url strings
-//video is a single url string
+//video is a single string with the Youtube id
 
 
 const resources =
@@ -499,7 +499,7 @@ Similar to \`array.map()\`, the \`array.filter()\` function iterates over an arr
     documentation: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter', 'https://medium.com/@JeffLombardJr/understanding-foreach-map-filter-and-find-in-javascript-f91da93b9f2c'],
     video: 'ZCeKemUErbY'
   },
-reduce: {
+  reduce: {
     overview:`
 ### Array.reduce()
 
