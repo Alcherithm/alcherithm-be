@@ -233,7 +233,7 @@ const fizzBuzz = (arr) => {
   };`.trim()
 },
 {
-  userId: users[4]._id,
+  userId: users[3]._id,
   challengeId: codeChallenges[10]._id,
   passed: true,
   solution:`
@@ -244,7 +244,7 @@ const fizzBuzz = (arr) => {
   };`.trim()
 },
 {
-  userId: users[4]._id,
+  userId: users[1]._id,
   challengeId: codeChallenges[10]._id,
   passed: true,
   solution: `
