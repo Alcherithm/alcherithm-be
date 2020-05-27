@@ -1613,14 +1613,272 @@ QUnit.test('It should return the number of characters in all houses using reduce
 `.trim(),
     resources: resources.objectIteration 
   },
-      {
-        category: '',
-        challengeNumber: , 
-        instructions: ``.trim(),
-        starterCode: ``.trim(),
-        qunitTest: ``.trim(),
-        resources: 
-      },
+  {
+    category: 'map',
+    challengeNumber: 1, 
+    instructions: `
+Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
+
+You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
+
+For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
+
+`.trim(),
+    starterCode: `
+export const forLoopTwoToThe = (arr) => {
+    // Solution code here...
+};
+
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return two raised to the power of the integer', assert => {
+    assert.deepEqual(forLoopTwoToThe([0, 4, 5]), [1, 16, 32]);
+}); 
+
+`.trim(),
+    resources: resources.map
+  },
+  {
+    category: 'map',
+    challengeNumber: 2, 
+    instructions: `
+Write a function named forEachTwoToThe that 
+given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
+
+Complete this challenge using a forEach loop.
+
+For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
+
+`.trim(),
+    starterCode: `
+export const forEachTwoToThe = (arr) => {
+    // Solution code here...
+};
+
+    `.trim(),
+    qunitTest: `
+QUnit.test('It should return two raised to the power of the integer', assert => {
+    assert.deepEqual(forEachTwoToThe([0, 4, 5]), [1, 16, 32]);
+});
+
+    `.trim(),
+    resources: resources.map
+  },
+  {
+    category: 'map',
+    challengeNumber: 3, 
+    instructions: `
+Write a function named mapTwoToThe that 
+given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
+
+Complete this challenge using map.
+
+For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
+
+`.trim(),
+    starterCode: `
+export const mapTwoToThe = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return two raised to the power of the integer', assert => {
+    assert.deepEqual(mapTwoToThe([0, 4, 5]), [1, 16, 32]);
+});
+
+`.trim(),
+    resources: resources.map
+  },
+  {
+    category: 'map',
+    challengeNumber: 4, 
+    instructions: `
+Write a function named charCode that, given an array of letters as an input, uses map to return a new array where each element is the result of the \`charCodeAt\` method on the original array element.
+
+Read the MDN documentation on String.charCodeAt() if necessary.
+
+For example: charCode(['h','i']) returns [104, 105].
+
+`.trim(),
+    starterCode: `
+export const charCode = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return an array containing the character code for each letter', assert => {
+    assert.deepEqual(
+        charCode(['C', 'o', 'd', 'e', '3', '0', '1']),
+        [67, 111, 100, 101, 51, 48, 49]
+    );
+});
+
+`.trim(),
+    resources: resources.map
+  },
+  {
+    category: 'map',
+    challengeNumber: 5, 
+    instructions: `
+Write a function that, given an array of numbers as input, uses map to return a new array where each element is either the string "even" or the string "odd", based on each value.
+
+If any element in the array is not a number, the resulting array should have the string "N/A" in its place.
+
+For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
+
+`.trim(),
+    starterCode: `
+export const evenOdd = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+QUnit.test('It should return an array containing even or odd for each number', assert => {
+    assert.deepEqual(
+        evenOdd([5, 8, 2, 6, 9, 13, 542, 541]),
+        ['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']
+    );
+});
+
+`.trim(),
+    resources: resources.map
+  },
+  {
+    category: 'map',
+    challengeNumber: 6, 
+    instructions: `
+Use the snorlaxAbilities data provided in the test for this challenge.
+
+Write a function named extractAbilities that, given the array of abilities, uses map to create an array containing only the ability name.
+
+Note: Because this function is expecting the array of abilities, it will be invoked as:
+extractAbilities(snorlaxAbilities.abilities)
+
+`.trim(),
+    starterCode: `
+export const extractAbilities = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const snorlaxAbilities = {
+    abilities: [
+        {
+            slot: 3,
+            is_hidden: true,
+            ability: {
+                url: 'https://pokeapi.co/api/v2/ability/82/',
+                name: 'gluttony',
+            },
+        },
+        {
+            slot: 2,
+            is_hidden: false,
+            ability: {
+                url: 'https://pokeapi.co/api/v2/ability/56/',
+                name: 'cute charm',
+            },
+        },
+        {
+            slot: 1,
+            is_hidden: false,
+            ability: {
+                url: 'https://pokeapi.co/api/v2/ability/17/',
+                name: 'immunity',
+            },
+        },
+    ],
+    name: 'snorlax',
+    weight: 4600,
+};
+
+QUnit.test('It should return an array containing only the ability names', assert => {
+    assert.deepEqual(
+        extractAbilities(snorlaxAbilities.abilities),
+        ['gluttony', 'cute charm', 'immunity']
+    );
+});
+
+`.trim(),
+    resources: resources.map
+  },
+  {
+    category: 'map',
+    challengeNumber: 7, 
+    instructions: `
+Use the snorlaxStats data provided in the test for this challenge.
+
+Write a function named extractStats that, given an array of stats, uses map to return an array of objects containing the stat name and the total.
+
+The total should be the sum of the effort and the baseStat.
+
+Here is an example of a single array element: { name: 'speed', total: 35 }
+
+`.trim(),
+    starterCode: `
+export const extractStats = (arr) => {
+    // Solution code here...
+};
+    
+`.trim(),
+    qunitTest: `
+const snorlaxStats = {
+    stats: [
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/6/',
+                name: 'speed',
+            },
+            effort: 5,
+            baseStat: 30,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/5/',
+                name: 'special-defense',
+            },
+            effort: 2,
+            baseStat: 110,
+        },
+        {
+            stat: {
+                url: 'https://pokeapi.co/api/v2/stat/4/',
+                name: 'special-attack',
+            },
+            effort: 9,
+            baseStat: 65,
+        },
+    ],
+    name: 'snorlax',
+    weight: 4600,
+};
+
+QUnit.test('It should return an array containing objects with name and total values', assert => {
+    assert.deepEqual(
+        extractStats(snorlaxStats.stats),
+        [
+            { name: 'speed', total: 35, },
+            { name: 'special-defense', total: 112, },
+            { name: 'special-attack', total: 74, },
+        ]
+    );
+});
+
+`.trim(),
+    resources: resources.map
+  },
+  {
+    category: '',
+    challengeNumber: , 
+    instructions: ``.trim(),
+    starterCode: ``.trim(),
+    qunitTest: ``.trim(),
+    resources: 
+  },
 ];
 
 module.exports = challenges;
