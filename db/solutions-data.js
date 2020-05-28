@@ -823,5 +823,99 @@ const stepActions = (recipe) => {
     return arr.map(el => {return { name: el.stat.name, total : el.effort + el.baseStat };});
   };`.trim()
 },
-
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[45]._id,
+  passed: true,
+  solution:`
+  const oddValues = (arr) => {
+    let odds = arr.filter ((val, idx) => {
+      return (val % 2);
+    });
+    return odds;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[46]._id,
+  passed: true,
+  solution:`
+  const filterStringsWithVowels = (arr) => {
+    const withVowels = arr.filter(word => {
+      let regex = word.match(/\w*[aeiou]\w*/g);
+      if(regex) {
+        return word;
+      }
+    });
+    return withVowels;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[47]._id,
+  passed: true,
+  solution:`
+  const notInFirstArray = (forbiddenValues, arr) => {
+    const notFirst = arr.filter(secondValue => {
+      if(!forbiddenValues.includes(secondValue)) {
+        return secondValue;
+      }
+    });
+    return notFirst;
+  };`
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[48]._id,
+  passed: true,
+  solution:`
+  const getBaseStatGreaterThan = (arr, minBaseStat) => {
+    const newThing = arr.filter(anything => anything.baseStat > minBaseStat);
+    // console.log(newThing);
+    return newThing;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[49]._id,
+  passed: true,
+  solution:`
+  const getStatName = (arr, minBaseStat) => {
+    const newThing = [];
+    arr.filter(anything => {
+      if(anything.baseStat > minBaseStat) {
+        newThing.push(anything.stat.name);
+      }
+    });
+    return newThing;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[50]._id,
+  passed: true,
+  solution: `
+  const getCharactersWithoutChildren = (arr) => {
+    const noChildren = arr.filter(character => character.children === undefined);
+    return noChildren;
+  };`.trimm()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[51]._id,
+  passed: true,
+  solution:`
+  const evenOddNumericValues = (arr) => {
+    const numArray = arr.filter((n) => {
+      return typeof n === 'number';
+    });
+    return numArray.map(item => {
+      if(item % 2) {
+        return 'odd';
+      } else {
+        return 'even';
+      }
+    });
+  };`.trim()
+},
 ];
