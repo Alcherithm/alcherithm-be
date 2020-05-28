@@ -1,22 +1,3 @@
-//NOTES FOR DATA INPUT: 
-//challenges = [
-//   {
-//     category: '',
-//     challengeNumber: , 
-//     instructions: ``.trim(),
-//     starterCode: ``.trim(),
-//     qunitTest: ``.trim(),
-//     resources: 
-//   }
-// ];
-
-//NOTES: category = category name (each branch in the BC2 repo is a new category). 
-//instructions, starterCode, and qunitTest all need to be wrapped in backticks and left justified. '.trim()' should be added after the backticks. Make sure there is a new line space before .trim
-//read the instructions and tests carefully- some of the wording needs to be updated since it references past challenges. Instructions should make sense on their own. Make sure to include any data sets needed to include the challenge from the test data (sometimes the same data set is used for many tests)
-//All tests should begin with 'QUnit.test'. There should be no skipped tests. 
-//resources are in resourcesData.js and can be called in as an object- resources.CATEGORYNAME
-
-
 const resources = require('./resources-data');
 
 const challenges = [
@@ -1075,7 +1056,7 @@ For example: (['name', 'duration', 'topics', 'finalExam']).
 
 `.trim(),
     starterCode: `
-export const getCourseKeys = obj => {
+  const getCourseKeys = obj => {
 // Solution code here...
 };
 
@@ -1108,7 +1089,7 @@ Write a function named getHouses that returns a new array containing the names o
 
 `.trim(),
     starterCode: `
-export const getHouseNames = houses => {
+  const getHouseNames = houses => {
     // Solution code here...
 };    
 
@@ -1177,7 +1158,7 @@ Write a function named getHouseWords that uses Object.values to return a new arr
 
 `.trim(),
     starterCode: `
-export const getHouseWords = houses => {
+  const getHouseWords = houses => {
     // Solution code here...
 }; 
 
@@ -1254,7 +1235,7 @@ Write a function named getHouseSizes that uses Object.entries to return a new ar
 
 `.trim(),
     starterCode: `
-export const getHouseSizes = houses => {
+  const getHouseSizes = houses => {
     // Solution code here...
 };
 
@@ -1334,7 +1315,7 @@ This function should take in the house data and a house name and return a the na
 
 `.trim(),
     starterCode: `
-export const getHouseHead = (houses, houseToFind) => {
+  const getHouseHead = (houses, houseToFind) => {
     // Solution code here...
 };
 
@@ -1413,7 +1394,7 @@ Write a function named totalCharacters that takes in the house data provided in 
 
 `.trim(),
     starterCode: `
-export const totalCharacters = houses => {
+  const totalCharacters = houses => {
     // Solution code here...
 };
 
@@ -1479,7 +1460,7 @@ Write a function named getHouseWordsMapped that uses Object.values and .map to r
 
 `.trim(),
     starterCode: `
-export const getHouseWordsMapped = houses => {
+  const getHouseWordsMapped = houses => {
     // Solution code here...
 };
 
@@ -1556,7 +1537,7 @@ Write a function named totalCharactersReduced that takes in the house data provi
 
 `.trim(),
     starterCode: `
-export const totalCharactersReduced = houses => {
+  const totalCharactersReduced = houses => {
     // Solution code here...
 };
 
@@ -1626,7 +1607,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 `.trim(),
     starterCode: `
-export const forLoopTwoToThe = (arr) => {
+  const forLoopTwoToThe = (arr) => {
     // Solution code here...
 };
 
@@ -1652,7 +1633,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 `.trim(),
     starterCode: `
-export const forEachTwoToThe = (arr) => {
+  const forEachTwoToThe = (arr) => {
     // Solution code here...
 };
 
@@ -1678,7 +1659,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 `.trim(),
     starterCode: `
-export const mapTwoToThe = (arr) => {
+  const mapTwoToThe = (arr) => {
     // Solution code here...
 };
     
@@ -1703,7 +1684,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 `.trim(),
     starterCode: `
-export const charCode = (arr) => {
+  const charCode = (arr) => {
     // Solution code here...
 };
     
@@ -1731,7 +1712,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 `.trim(),
     starterCode: `
-export const evenOdd = (arr) => {
+  const evenOdd = (arr) => {
     // Solution code here...
 };
     
@@ -1760,7 +1741,7 @@ extractAbilities(snorlaxAbilities.abilities)
 
 `.trim(),
     starterCode: `
-export const extractAbilities = (arr) => {
+  const extractAbilities = (arr) => {
     // Solution code here...
 };
     
@@ -1821,7 +1802,7 @@ Here is an example of a single array element: { name: 'speed', total: 35 }
 
 `.trim(),
     starterCode: `
-export const extractStats = (arr) => {
+  const extractStats = (arr) => {
     // Solution code here...
 };
     
@@ -1882,7 +1863,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
     `.trim(),
     starterCode: `
-export const oddValues = (arr) => {
+  const oddValues = (arr) => {
     // Solution code here...
 };
     
@@ -1909,7 +1890,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
     `.trim(),
     starterCode: `
-export const filterStringsWithVowels = (arr) => {
+  const filterStringsWithVowels = (arr) => {
     // Solution code here...
 };
     
@@ -1943,7 +1924,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 `.trim(),
     starterCode: `
-export const notInFirstArray = (forbiddenValues, arr) => {
+  const notInFirstArray = (forbiddenValues, arr) => {
     // Solution code here...
 };
     
@@ -1969,7 +1950,7 @@ For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array 
 
 `.trim(),
     starterCode: `
-export const getBaseStatGreaterThan = (arr, minBaseStat) => {
+  const getBaseStatGreaterThan = (arr, minBaseStat) => {
     // Solution code here...
 };
     
@@ -2027,7 +2008,7 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 `.trim(),
     starterCode: `
-export const getStatName = (arr, minBaseStat) => {
+  const getStatName = (arr, minBaseStat) => {
     // Solution code here...
 };
     
@@ -2079,7 +2060,7 @@ Write a function named getCharactersWithoutChildren that, given the array of cha
 
 `.trim(),
     starterCode: `
-export const getCharactersWithoutChildren = (arr) => {
+  const getCharactersWithoutChildren = (arr) => {
     // Solution code here...
 };
     
@@ -2151,7 +2132,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 `.trim(),
     starterCode: `
-export const evenOddNumericValues = (arr) => {
+  const evenOddNumericValues = (arr) => {
     // Solution code here...
 };
     
@@ -2175,7 +2156,7 @@ Note: You may not use the array's built-in length property.
 
 `.trim(),
     starterCode: `
-export const countNumberOfElements = (arr) => {
+  const countNumberOfElements = (arr) => {
     // Solution code here...
 };
     
@@ -2199,7 +2180,7 @@ eye color:
 
 `.trim(),
     starterCode: `
-export const eyeColorTally = (arr) => {
+  const eyeColorTally = (arr) => {
     // Solution code here...
 };
     
@@ -2276,7 +2257,7 @@ Write a function named eyeColorNames that, given the Star Wars data provided in 
 
 `.trim(),
     starterCode: `
-export const eyeColorNames = (arr) => {
+  const eyeColorNames = (arr) => {
     // Solution code here...
 };
     
@@ -2356,7 +2337,7 @@ Write a function named countNumberOfChildren that, given the array of characters
 
 `.trim(),
     starterCode: `
-export const countNumberOfChildren = (arr) => {
+  const countNumberOfChildren = (arr) => {
     // Solution code here...
 };
     
@@ -2422,7 +2403,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 `.trim(),
     starterCode: `
-export const calculateAverage = (arr) => {
+  const calculateAverage = (arr) => {
     // Solution code here...
 };
     
@@ -2454,7 +2435,7 @@ const isPrime = (value) => {
     return value > 1;
 };
 
-export const countPrimeNumbers = (arr) => {
+  const countPrimeNumbers = (arr) => {
     // Solution code here...
 };
 
@@ -2477,7 +2458,7 @@ Hint: The accumulator should begin as { min: 0, max: 0 }
 
 `.trim(),
     starterCode: `
-export const effortStats = (statName, arr) => {
+  const effortStats = (statName, arr) => {
     // Solution code here...
 };
     
@@ -2536,7 +2517,7 @@ Write a function named extractChildren that, given the array of characters from 
 
     `.trim(),
     starterCode: `
-export const extractChildren = (arr) => {
+  const extractChildren = (arr) => {
     // Solution code here...
 };
     
@@ -2609,7 +2590,7 @@ Return the array of the total number of cookies sold per hour for all of the sto
 
 `.trim(),
     starterCode: `
-export const grandTotal = (stores) => {
+  const grandTotal = (stores) => {
     // Solution code here...
     
 };
@@ -2646,7 +2627,7 @@ Write a function named salesData that uses forEach to iterate over the grandTota
 
 `.trim(),
     starterCode: `
-export const salesData = (hours, data) => {
+  const salesData = (hours, data) => {
     // Solution code here...
 };
     
@@ -2693,7 +2674,7 @@ Write a function named howManyTreats that will return the quantity of treats you
 
 `.trim(),
     starterCode: `
-export const howManyTreats = (arr) => {
+  const howManyTreats = (arr) => {
     // Solution code here...
 };
     
@@ -2741,7 +2722,7 @@ The top row of the board is considered row zero and row numbers increase as they
 
 `.trim(),
     starterCode: `
-export const battleship = (board, row, col) => {
+  const battleship = (board, row, col) => {
     //  Solution code here...
 };
     
@@ -2774,7 +2755,7 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 `.trim(),
     starterCode: `
-export const calculateProduct = (numbers) => {
+  const calculateProduct = (numbers) => {
     // Solution code here...
 };
     
@@ -2799,7 +2780,7 @@ Calculate the average daily temperature during that entire period. Your output s
 
 `.trim(),
     starterCode: `
-export const averageDailyTemperature = (weather) => {
+  const averageDailyTemperature = (weather) => {
     // Solution code here...
 };
     
@@ -2831,7 +2812,7 @@ For example, in the data set provided in the test, the lowest weekly average is 
 
 `.trim(),
     starterCode: `
-export const lowestWeeklyAverage = (weather) => {
+  const lowestWeeklyAverage = (weather) => {
     // Solution code here...
 };
     
@@ -2866,7 +2847,7 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 
 `.trim(),
     starterCode: `
-export const excel = (str) => {
+  const excel = (str) => {
     // Solution code here...
 };
     
@@ -2883,14 +2864,6 @@ QUnit.test('It should return the total count for each row', assert => {
 `.trim(),
     resources: resources.nestedForLoops
   }
-//   {
-//     category: '',
-//     challengeNumber: , 
-//     instructions: ``.trim(),
-//     starterCode: ``.trim(),
-//     qunitTest: ``.trim(),
-//     resources: 
-//   },
 ];
 
 module.exports = challenges;
