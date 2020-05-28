@@ -206,7 +206,7 @@ const fizzBuzz = (arr) => {
 },
 {
   userId: users[2]._id,
-  challengeId: codeChallenges[8]._id,
+  challengeId: codeChallenges[7]._id,
   passed: true,
   solution:`
   const appendTheEnd = (str) => {
@@ -245,7 +245,7 @@ const fizzBuzz = (arr) => {
 },
 {
   userId: users[1]._id,
-  challengeId: codeChallenges[10]._id,
+  challengeId: codeChallenges[11]._id,
   passed: true,
   solution: `
   const append = (arr1, arr2) => {
@@ -264,6 +264,18 @@ return arr.sort((a, b) => {
   return b - a;
 });
 };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[12]._id,
+  passed: true,
+  solution:`
+  export const sortBackwards = (arr) => {
+    arr.sort((a, b) => {
+      return b - a;
+    });
+    return arr;
+  };`.trim()
 },
 {
   userId: users[1]._id,
@@ -287,6 +299,18 @@ return arr.sort((a, b) => {
 },
 {
   userId: users[0]._id,
+  challengeId: codeChallenges[14]._id,
+  passed: true,
+  solution:`
+  const sortByLength = (arr) => {
+    arr.sort((a, b) => {
+      return a.length - b.length;
+    });
+    return arr;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
   challengeId: codeChallenges[15]._id,
   passed: true,
   solution: `
@@ -297,6 +321,18 @@ return arr;
 },
 {
   userId: users[0]._id,
+  challengeId: codeChallenges[15]._id,
+  passed: true,
+  solution:`
+const alphabetizeBetter = (arr) => {
+  arr.sort((a, b) => {
+      return a.localeCompare(b);
+    });
+    return arr;
+  };`.trim()
+},
+{
+  userId: users[1]._id,
   challengeId: codeChallenges[16]._id,
   passed: true,
   solution: `
@@ -305,7 +341,19 @@ return arr.sort((a, b) => a.price - b.price);
 };`.trim(),
 },
 {
-  userId: users[0]._id,
+  userId: users[2]._id,
+  challengeId: codeChallenges[16]._id,
+  passed: true,
+  solution: `
+  export const sortByPrice = (arr) => {
+    arr.sort((a, b) => {
+      return a.price - b.price;
+    });
+    return arr;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
   challengeId: codeChallenges[17]._id,
   passed: true,
   solution: `
@@ -313,6 +361,38 @@ const sortNumbersByLength = (arr) => {
 arr.sort((a, b) => a.toString().length - b.toString().length);
 return arr;
 };`.trim(),
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[17]._id,
+  passed: true,
+  solution:`
+  const sortNumbersByLength = (arr) => {
+    arr.sort(function(a, b) {
+      return a.toString().length - b.toString().length;
+    });
+    return arr;
+  };`.trim(),
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[18]._id,
+  passed: true,
+  solution:`
+  export class Person {
+    constructor(firstName, lastName, age) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+    }
+  }
+  
+  export const sortPeople = (arr) => {
+    arr.sort((a, b) => {
+      return a.lastName.localeCompare(b.lastName);
+    });
+    return arr;
+  };`.trim()
 },
 {
   userId: users[0]._id,
@@ -348,6 +428,111 @@ arr.sort((a, b) => {
 );
 return arr;
 };`.trim(),
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[19]._id,
+  passed: true,
+  solution: `
+  const sortPeopleBetter = (arr) => {
+    arr.sort(function(a, b) { 
+  
+      if(a.lastName < b.lastName) {
+        return -1;
+      } else if(a.lastName > b.lastName) {
+        return 1;
+      } else {
+        if(a.firstName < b.firstName) {
+          return -1;
+        } else if(a.firstName > b.firstName) {
+          return 1;
+        } else {
+          return a.age - b.age;
+        }
+      }
+    });
+    return arr;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[20]._id,
+  passed: true,
+  solution:`
+  const isNum = (input) => {
+    const regex = /[0-9]/g;
+    return regex.test(input);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[21]._id,
+  passed: true,
+  solution:`
+  const isCapitalized = (str) => {
+    const regex = /\b[A-Z][a-z]+(?: [A-Z][a-z]+)*/g;
+    if(str.match(regex) === null) {
+      return [];
+    } else {
+      return str.match(regex);
+    } 
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[22]._id,
+  passed: true,
+  solution:`
+  const citiesAtoJ = (arr) => {
+    let regex = /^[A-J]/;
+    let aThroughjArr = [];
+  
+    arr.forEach(item => {
+      if(regex.test(item)) {
+        aThroughjArr.push(item);
+      } 
+    });
+  
+    return aThroughjArr; 
+  
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[23]._id,
+  passed: true,
+  solution:`
+  const matchMonth = (input) => /^[Oo]ct(ober)?$/g.test(input);`
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[24]._id,
+  passed: true,
+  solution:`
+  const noPunctuation = str => {
+    let regex = /[a-z|A-Z|0-9]+\s/g;
+    return str.match(regex);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[25]._id,
+  passed: true,
+  solution:`
+  const hangman = (str) => {
+    const regex = /[aeiou|AEIOU]/g;
+    str = str.replace(regex, '_');
+    return str;
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[20]._id,
+  passed: true,
+  solution:`
+  const findShells = (str) => {
+    return str.match(/\w*(ells)/g);
+  };`.trim()
 },
 {
   userId: users[0]._id,
