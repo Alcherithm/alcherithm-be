@@ -2768,7 +2768,7 @@ QUnit.test('It should multiply all the numbers together', assert => {
 });
 
 `.trim(),
-resources: resources.nestedForLoops
+    resources: resources.nestedForLoops
   },
   {
     category: 'nested for loops',

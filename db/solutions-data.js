@@ -455,83 +455,16 @@ return arr;
   };`.trim()
 },
 {
-  userId: users[2]._id,
+  userId: users[1]._id,
   challengeId: codeChallenges[20]._id,
   passed: true,
   solution:`
-  const isNum = (input) => {
-    const regex = /[0-9]/g;
-    return regex.test(input);
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[21]._id,
-  passed: true,
-  solution:`
-  const isCapitalized = (str) => {
-    const regex = /\b[A-Z][a-z]+(?: [A-Z][a-z]+)*/g;
-    if(str.match(regex) === null) {
-      return [];
-    } else {
-      return str.match(regex);
-    } 
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[22]._id,
-  passed: true,
-  solution:`
-  const citiesAtoJ = (arr) => {
-    let regex = /^[A-J]/;
-    let aThroughjArr = [];
-  
-    arr.forEach(item => {
-      if(regex.test(item)) {
-        aThroughjArr.push(item);
-      } 
-    });
-  
-    return aThroughjArr; 
-  
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[23]._id,
-  passed: true,
-  solution:`
-  const matchMonth = (input) => /^[Oo]ct(ober)?$/g.test(input);`
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[24]._id,
-  passed: true,
-  solution:`
-  const noPunctuation = str => {
-    let regex = /[a-z|A-Z|0-9]+\s/g;
-    return str.match(regex);
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[25]._id,
-  passed: true,
-  solution:`
-  const hangman = (str) => {
-    const regex = /[aeiou|AEIOU]/g;
-    str = str.replace(regex, '_');
-    return str;
-  };`.trim()
-},
-{
-  userId: users[0]._id,
-  challengeId: codeChallenges[20]._id,
-  passed: true,
-  solution:`
-  const findShells = (str) => {
-    return str.match(/\w*(ells)/g);
+  const howMuchPencil = (str) => {
+    let result = [];
+    for(let i = 0; i <= str.length; i++) {
+      result.push(str.slice(i));
+    }
+    return result;
   };`.trim()
 },
 {
@@ -546,21 +479,31 @@ const howMuchPencil = (str) => {
       result.push(word);
   }
   return result;
-};`.trim(),
+};`.trim()
 },
 {
   userId: users[1]._id,
-  challengeId: codeChallenges[20]._id,
+  challengeId: codeChallenges[21]._id,
   passed: true,
   solution: `
 const wordsToCharList = (str) => {
   let letters = str.split('');
   return letters;
-};`.trim(),
+};`.trim()
 },
 {
   userId: users[1]._id,
   challengeId: codeChallenges[21]._id,
+  passed: true,
+  solution:`
+  const wordsToCharList = (str) => {
+    let result = str.split('');
+    return result;
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[22]._id,
   passed: true,
   solution: `
 const listFoods = (recipe) => {
@@ -575,8 +518,8 @@ const listFoods = (recipe) => {
 },
 {
   userId: users[1]._id,
-  challengeId: codeChallenges[22]._id,
-  passed: false,
+  challengeId: codeChallenges[23]._id,
+  passed: true,
   solution: `
 const splitFoods = (recipe) => {
   let result = [];
@@ -590,7 +533,25 @@ const splitFoods = (recipe) => {
 {
   userId: users[1]._id,
   challengeId: codeChallenges[23]._id,
-  passed: false,
+  passed: true,
+  solution:`
+  const splitFoods = (recipe) => {
+    let result = [];
+    let ingredientList = recipe.ingredients;
+  
+    for(let i = 0; i < ingredientList.length; i++) {
+      const item = ingredientList[i].split(' ', ingredientList.length);
+      const sliceThing = item.slice(2, item.length).join(' ');
+      result.push(sliceThing);   
+    }
+  
+    return result;
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[24]._id,
+  passed: true,
   solution: `
 const stepActions = (recipe) => {
   let result = [];
@@ -602,4 +563,265 @@ const stepActions = (recipe) => {
   return result.push();
 };`.trim(),
 },
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[24]._id,
+  passed: true,
+  solution:`
+  const stepActions = (recipe) => {
+    let result = [];
+    let steps = recipe.steps;
+  
+    for(let i = 0; i < steps.length; i++) {
+      const item = steps[i].indexOf(' ', 0);
+      const sliceThing = steps[i].slice(0, item);
+      result.push(sliceThing);   
+    }
+    return result;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[25]._id,
+  passed: true,
+  solution: `
+  const removeEvenValues = (arr) => {
+    for(let i = 0; i < arr.length; i++) {
+      while(arr[i] % 2 === 0) {
+        arr.splice(i, 1);
+      }
+    }
+    return arr;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[26]._id,
+  passed: true,
+  solution:`
+  const removeLastCharacters = (str, numberOfCharacters) => {
+    let name;
+    const length = str.length;
+    const diff = length - numberOfCharacters;
+    const diffIn = diff - length;
+    if(diff - length < 0) {
+      name = str.slice(0, diffIn);
+    } else {
+      return str;
+    }
+    return name;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[27]._id,
+  passed: true,
+  solution:`
+  const totalSumCSV = (str) => {
+    let total = 0;
+    const arr = str.split(',');
+    arr.forEach(item => {
+      total += +item;
+    });
+    return total;
+  };`
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[28]._id,
+  passed: true,
+  solution:`
+  const removeVowels = (str) => {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+      
+    return str.split('').filter((el) => {
+      return vowels.indexOf(el) === -1;
+    }).join('');
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[29]._id,
+  passed: true,
+  solution:`
+  const extractVowels = (str) => {
+    let result = [];
+    result[0] = str.replace(/[aeiou]/g, '');
+    result[1] = str.split('').sort().join().replace(/[^aeiou]/g, '');
+    return result;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[30]._id,
+  passed: true,
+  solution:`
+  const getCourseKeys = (obj) => {
+    return Object.keys(obj);
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[31]._id,
+  passed: true,
+  solution:`
+  export const getHouseNames = houses => {
+    return Object.keys(houses);
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[32]._id,
+  passed: true,
+  solution:`
+  const getHouseWords = houses => {
+    let houseWords = [];
+    Object.values(houses).forEach(house => {
+        houseWords.push(house.words);
+    });
+    return houseWords;    
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[33]._id,
+  passed: true,
+  solution:`
+  const getHouseSizes = houses => {
+    let houseSize = [];
+    Object.entries(houses).forEach(house => {
+        const houseObj = {
+            house: house[0],
+            members: house[1].characters.length
+        };
+        houseSize.push(houseObj);
+    });
+    return houseSize;
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[34]._id,
+  passed: true,
+  solution:`
+  const getHouseHead = (houses, houseToFind) => {
+    let houseHead = '';
+    Object.entries(houses).forEach(house => {
+        if(house[0] === houseToFind){
+            houseHead = (house[1].head);
+        }
+    });
+    return houseHead;
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[35]._id,
+  passed: true,
+  solution:`
+  const totalCharacters = houses => {
+    let charCount = 0;
+    Object.entries(houses).forEach(house => {
+        charCount = charCount + (house[1].characters.length);
+    });
+    return charCount;
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[36]._id,
+  passed: true,
+  solution:`
+  const getHouseWordsMapped = houses => {
+    return Object.values(houses).map(house => {
+        return house.words;
+    });  
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[37]._id,
+  passed: true,
+  solution:`
+  const totalCharactersReduced = houses => {
+    return Object.values(houses).reduce((acc, value) => {
+        acc = acc + value.characters.length;
+        return acc;
+    }, 0);
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[38]._id,
+  passed: true,
+  solution:`
+  const forLoopTwoToThe = (arr) => {
+    let i = 0;
+    const result = [];
+    for(i = 0; i < arr.length; i++){
+      result.push(Math.pow(2, arr[i]));
+    }
+    return result;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[39]._id,
+  passed: true,
+  solution:`
+  const forEachTwoToThe = (arr) => {
+    const result = [];
+    arr.forEach(el => {
+      result.push(Math.pow(2, el));
+    });
+    return result;
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[40]._id,
+  passed: true,
+  solution:`
+  const mapTwoToThe = (arr) => {
+    return arr.map(el => Math.pow(2, el));
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[41]._id,
+  passed: true,
+  solution:`
+  const charCode = (arr) => {
+    return arr.map(el => el.charCodeAt(0));
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[42]._id,
+  passed: true,
+  solution:`
+  const evenOdd = (arr) => {
+    return arr.map(el => isNaN(el) ? 'N/A' :
+      el % 2 === 0 ? 'even' : 'odd');
+  };`.trim() 
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[43]._id,
+  passed: true,
+  solution:`
+  const extractAbilities = (arr) => {
+    return arr.map(el => el.ability.name);
+  };`.trim() 
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[44]._id,
+  passed: true,
+  solution:`
+  const extractStats = (arr) => {
+    return arr.map(el => {return { name: el.stat.name, total : el.effort + el.baseStat };});
+  };`.trim()
+},
+
 ];
