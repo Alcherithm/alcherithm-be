@@ -842,7 +842,7 @@ const stepActions = (recipe) => {
   solution:`
   const filterStringsWithVowels = (arr) => {
     const withVowels = arr.filter(word => {
-      let regex = word.match(/\w*[aeiou]\w*/g);
+      let regex = word.match(/w*[aeiou]w*/g);
       if(regex) {
         return word;
       }
@@ -898,7 +898,7 @@ const stepActions = (recipe) => {
   const getCharactersWithoutChildren = (arr) => {
     const noChildren = arr.filter(character => character.children === undefined);
     return noChildren;
-  };`.trimm()
+  };`.trim()
 },
 {
   userId: users[2]._id,
