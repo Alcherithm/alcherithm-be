@@ -455,6 +455,86 @@ return arr;
   };`.trim()
 },
 {
+  userId: users[2]._id,
+  challengeId: codeChallenges[20]._id,
+  passed: true,
+  solution:`
+  const isNum = (input) => {
+    const regex = /[0-9]/g;
+    return regex.test(input);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[21]._id,
+  passed: true,
+  solution:`
+  const isCapitalized = (str) => {
+    const regex = /\b[A-Z][a-z]+(?: [A-Z][a-z]+)*/g;
+    if(str.match(regex) === null) {
+      return [];
+    } else {
+      return str.match(regex);
+    } 
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[22]._id,
+  passed: true,
+  solution:`
+  const citiesAtoJ = (arr) => {
+    let regex = /^[A-J]/;
+    let aThroughjArr = [];
+  
+    arr.forEach(item => {
+      if(regex.test(item)) {
+        aThroughjArr.push(item);
+      } 
+    });
+  
+    return aThroughjArr; 
+  
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[23]._id,
+  passed: true,
+  solution:`
+  const matchMonth = (input) => /^[Oo]ct(ober)?$/g.test(input);`
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[24]._id,
+  passed: true,
+  solution:`
+  const noPunctuation = str => {
+    let regex = /[a-z|A-Z|0-9]+\s/g;
+    return str.match(regex);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[25]._id,
+  passed: true,
+  solution:`
+  const hangman = (str) => {
+    const regex = /[aeiou|AEIOU]/g;
+    str = str.replace(regex, '_');
+    return str;
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[20]._id,
+  passed: true,
+  solution:`
+  const findShells = (str) => {
+    return str.match(/\w*(ells)/g);
+  };`.trim()
+},
+{
   userId: users[0]._id,
   challengeId: codeChallenges[20]._id,
   passed: true,
