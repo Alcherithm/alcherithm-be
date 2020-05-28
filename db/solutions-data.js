@@ -918,4 +918,113 @@ const stepActions = (recipe) => {
     });
   };`.trim()
 },
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[52]._id,
+  passed: true,
+  solution:`
+  const countNumberOfElements = (arr) => {
+    const total = arr.reduce((acc, item) => {
+      return acc + 1;
+    }, 0);
+    return total;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[53]._id,
+  passed: true,
+  solution:`
+  const eyeColorTally = (arr) => {
+    return arr.reduce((acc, x) => { 
+      if(acc[x.eye_color]){
+        acc[x.eye_color] += 1;
+      } else {
+        acc[x.eye_color] = 1;
+      }
+      return acc;
+    }, {});
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[54]._id,
+  passed: true,
+  solution:`
+  const eyeColorNames = (arr) => {
+    return arr.reduce((acc, x) => { 
+      if(acc[x.eye_color]){
+        acc[x.eye_color].push(x.name);
+      } else {
+        acc[x.eye_color] = [x.name];
+      }
+      return acc;
+    }, {});
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[55]._id,
+  passed: true,
+  solution:`
+  const countNumberOfChildren = (arr) => {
+    return arr.reduce(((acc, x) => acc + (Array.isArray(x.children) ? x.children.length : 0)), 0);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[56]._id,
+  passed: true,
+  solution:`
+  const calculateAverage = (arr) => {
+    return arr.reduce(((acc, el)=> acc + el), 0) / arr.length;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[57]._id,
+  passed: true,
+  solution:`
+  const isPrime = (value) => {
+    for(let i = 2; i < value; i++) {
+      if(value % i === 0) {
+        return false;
+      }
+    }
+    return value > 1;
+  };
+  
+  const countPrimeNumbers = (arr) => {
+    return arr.reduce(((acc, el) => acc + (isPrime(el) ? 1 : 0)), 0);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[58]._id,
+  passed: true,
+  solution:`
+  const effortStats = (statName, arr) => {
+    let acc = { min: 10, max: 0 };
+    return statName.reduce((acc, el) => {
+      acc.min = el.effort < acc.min ? el.effort : acc.min;
+      acc.max = el.effort > acc.max ? el.effort : acc.max;
+      return acc;
+    }, acc);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[59]._id,
+  passed: true,
+  solution:`
+  const extractChildren = (arr) => {
+    const charWithA = arr.filter(el => /a/g.test(el.name));
+    return charWithA.reduce(((acc, el) => {
+      if(el.children){
+        el.children.forEach(e => acc.push(e));          
+      }
+      return acc;
+    }), []);
+  };`.trim()
+},
 ];
