@@ -1013,7 +1013,7 @@ const stepActions = (recipe) => {
   };`.trim()
 },
 {
-  userId: users[2]._id,
+  userId: users[1]._id,
   challengeId: codeChallenges[59]._id,
   passed: true,
   solution:`
@@ -1027,4 +1027,109 @@ const stepActions = (recipe) => {
     }), []);
   };`.trim()
 },
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[60]._id,
+  passed: true,
+  solution:`
+  `
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[61]._id,
+  passed: true,
+  solution:`
+  const grandTotal = (stores) => {
+
+    let cookiesPerHour = [];
+    for(let i = 0; i < stores[0].length; i++) {
+      let item = 0;
+      for(let j = 0; j < stores.length; j++) {
+        item += stores[j][i];
+      }
+      cookiesPerHour.push(item);
+    }
+    return cookiesPerHour;
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[62]._id,
+  passed: true,
+  solution:`
+  const salesData = (hours, data) => {
+    const result = [];
+    for(let i = 0; i < data.length; i++) {
+      const object = {
+        sales: data[i] + ' cookies ',
+        time: hours[i]
+      };
+      result.push(object);
+    }
+    return result;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[63]._id,
+  passed: true,
+  solution:`
+  const battleship = (board, row, col) => {
+    if(board[row][col] === '#') {
+      return 'hit';
+    } else {
+      return 'miss';
+    }
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[64]._id,
+  passed: true,
+  solution:`
+  const calculateProduct = (numbers) => {
+    let product = 1;
+    numbers.forEach(arr => {
+      arr.forEach(item => {
+        product *= item;
+      });
+    });
+    return product;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[65]._id,
+  passed: true,
+  solution:`
+  const averageDailyTemperature = (weather) => {
+    let sum = 0;
+    let counter = 0;
+    weather.forEach(arr => {
+      arr.forEach(item => {
+        sum += item;
+        counter++;
+      });
+    });
+    return (sum / counter).toFixed(2);
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[66]._id,
+  passed: true,
+  solution:`
+  const averageDailyTemperature = (weather) => {
+    SOLUTION NOT FOUND
+};`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[67]._id,
+  passed: true,
+  solution:`
+  const lowestWeeklyAverage = (weather) => {
+    SOLUTION NOT FOUND
+};`.trim()
+}
 ];
