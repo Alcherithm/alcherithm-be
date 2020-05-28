@@ -455,83 +455,16 @@ return arr;
   };`.trim()
 },
 {
-  userId: users[2]._id,
+  userId: users[1]._id,
   challengeId: codeChallenges[20]._id,
   passed: true,
   solution:`
-  const isNum = (input) => {
-    const regex = /[0-9]/g;
-    return regex.test(input);
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[21]._id,
-  passed: true,
-  solution:`
-  const isCapitalized = (str) => {
-    const regex = /\b[A-Z][a-z]+(?: [A-Z][a-z]+)*/g;
-    if(str.match(regex) === null) {
-      return [];
-    } else {
-      return str.match(regex);
-    } 
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[22]._id,
-  passed: true,
-  solution:`
-  const citiesAtoJ = (arr) => {
-    let regex = /^[A-J]/;
-    let aThroughjArr = [];
-  
-    arr.forEach(item => {
-      if(regex.test(item)) {
-        aThroughjArr.push(item);
-      } 
-    });
-  
-    return aThroughjArr; 
-  
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[23]._id,
-  passed: true,
-  solution:`
-  const matchMonth = (input) => /^[Oo]ct(ober)?$/g.test(input);`
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[24]._id,
-  passed: true,
-  solution:`
-  const noPunctuation = str => {
-    let regex = /[a-z|A-Z|0-9]+\s/g;
-    return str.match(regex);
-  };`.trim()
-},
-{
-  userId: users[2]._id,
-  challengeId: codeChallenges[25]._id,
-  passed: true,
-  solution:`
-  const hangman = (str) => {
-    const regex = /[aeiou|AEIOU]/g;
-    str = str.replace(regex, '_');
-    return str;
-  };`.trim()
-},
-{
-  userId: users[0]._id,
-  challengeId: codeChallenges[20]._id,
-  passed: true,
-  solution:`
-  const findShells = (str) => {
-    return str.match(/\w*(ells)/g);
+  const howMuchPencil = (str) => {
+    let result = [];
+    for(let i = 0; i <= str.length; i++) {
+      result.push(str.slice(i));
+    }
+    return result;
   };`.trim()
 },
 {
@@ -546,21 +479,31 @@ const howMuchPencil = (str) => {
       result.push(word);
   }
   return result;
-};`.trim(),
+};`.trim()
 },
 {
   userId: users[1]._id,
-  challengeId: codeChallenges[20]._id,
+  challengeId: codeChallenges[21]._id,
   passed: true,
   solution: `
 const wordsToCharList = (str) => {
   let letters = str.split('');
   return letters;
-};`.trim(),
+};`.trim()
 },
 {
   userId: users[1]._id,
   challengeId: codeChallenges[21]._id,
+  passed: true,
+  solution:`
+  const wordsToCharList = (str) => {
+    let result = str.split('');
+    return result;
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[22]._id,
   passed: true,
   solution: `
 const listFoods = (recipe) => {
@@ -575,8 +518,8 @@ const listFoods = (recipe) => {
 },
 {
   userId: users[1]._id,
-  challengeId: codeChallenges[22]._id,
-  passed: false,
+  challengeId: codeChallenges[23]._id,
+  passed: true,
   solution: `
 const splitFoods = (recipe) => {
   let result = [];
@@ -590,7 +533,25 @@ const splitFoods = (recipe) => {
 {
   userId: users[1]._id,
   challengeId: codeChallenges[23]._id,
-  passed: false,
+  passed: true,
+  solution:`
+  const splitFoods = (recipe) => {
+    let result = [];
+    let ingredientList = recipe.ingredients;
+  
+    for(let i = 0; i < ingredientList.length; i++) {
+      const item = ingredientList[i].split(' ', ingredientList.length);
+      const sliceThing = item.slice(2, item.length).join(' ');
+      result.push(sliceThing);   
+    }
+  
+    return result;
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[24]._id,
+  passed: true,
   solution: `
 const stepActions = (recipe) => {
   let result = [];
@@ -602,4 +563,573 @@ const stepActions = (recipe) => {
   return result.push();
 };`.trim(),
 },
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[24]._id,
+  passed: true,
+  solution:`
+  const stepActions = (recipe) => {
+    let result = [];
+    let steps = recipe.steps;
+  
+    for(let i = 0; i < steps.length; i++) {
+      const item = steps[i].indexOf(' ', 0);
+      const sliceThing = steps[i].slice(0, item);
+      result.push(sliceThing);   
+    }
+    return result;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[25]._id,
+  passed: true,
+  solution: `
+  const removeEvenValues = (arr) => {
+    for(let i = 0; i < arr.length; i++) {
+      while(arr[i] % 2 === 0) {
+        arr.splice(i, 1);
+      }
+    }
+    return arr;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[26]._id,
+  passed: true,
+  solution:`
+  const removeLastCharacters = (str, numberOfCharacters) => {
+    let name;
+    const length = str.length;
+    const diff = length - numberOfCharacters;
+    const diffIn = diff - length;
+    if(diff - length < 0) {
+      name = str.slice(0, diffIn);
+    } else {
+      return str;
+    }
+    return name;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[27]._id,
+  passed: true,
+  solution:`
+  const totalSumCSV = (str) => {
+    let total = 0;
+    const arr = str.split(',');
+    arr.forEach(item => {
+      total += +item;
+    });
+    return total;
+  };`
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[28]._id,
+  passed: true,
+  solution:`
+  const removeVowels = (str) => {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+      
+    return str.split('').filter((el) => {
+      return vowels.indexOf(el) === -1;
+    }).join('');
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[29]._id,
+  passed: true,
+  solution:`
+  const extractVowels = (str) => {
+    let result = [];
+    result[0] = str.replace(/[aeiou]/g, '');
+    result[1] = str.split('').sort().join().replace(/[^aeiou]/g, '');
+    return result;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[30]._id,
+  passed: true,
+  solution:`
+  const getCourseKeys = (obj) => {
+    return Object.keys(obj);
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[31]._id,
+  passed: true,
+  solution:`
+  export const getHouseNames = houses => {
+    return Object.keys(houses);
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[32]._id,
+  passed: true,
+  solution:`
+  const getHouseWords = houses => {
+    let houseWords = [];
+    Object.values(houses).forEach(house => {
+        houseWords.push(house.words);
+    });
+    return houseWords;    
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[33]._id,
+  passed: true,
+  solution:`
+  const getHouseSizes = houses => {
+    let houseSize = [];
+    Object.entries(houses).forEach(house => {
+        const houseObj = {
+            house: house[0],
+            members: house[1].characters.length
+        };
+        houseSize.push(houseObj);
+    });
+    return houseSize;
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[34]._id,
+  passed: true,
+  solution:`
+  const getHouseHead = (houses, houseToFind) => {
+    let houseHead = '';
+    Object.entries(houses).forEach(house => {
+        if(house[0] === houseToFind){
+            houseHead = (house[1].head);
+        }
+    });
+    return houseHead;
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[35]._id,
+  passed: true,
+  solution:`
+  const totalCharacters = houses => {
+    let charCount = 0;
+    Object.entries(houses).forEach(house => {
+        charCount = charCount + (house[1].characters.length);
+    });
+    return charCount;
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[36]._id,
+  passed: true,
+  solution:`
+  const getHouseWordsMapped = houses => {
+    return Object.values(houses).map(house => {
+        return house.words;
+    });  
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[37]._id,
+  passed: true,
+  solution:`
+  const totalCharactersReduced = houses => {
+    return Object.values(houses).reduce((acc, value) => {
+        acc = acc + value.characters.length;
+        return acc;
+    }, 0);
+};`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[38]._id,
+  passed: true,
+  solution:`
+  const forLoopTwoToThe = (arr) => {
+    let i = 0;
+    const result = [];
+    for(i = 0; i < arr.length; i++){
+      result.push(Math.pow(2, arr[i]));
+    }
+    return result;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[39]._id,
+  passed: true,
+  solution:`
+  const forEachTwoToThe = (arr) => {
+    const result = [];
+    arr.forEach(el => {
+      result.push(Math.pow(2, el));
+    });
+    return result;
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[40]._id,
+  passed: true,
+  solution:`
+  const mapTwoToThe = (arr) => {
+    return arr.map(el => Math.pow(2, el));
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[41]._id,
+  passed: true,
+  solution:`
+  const charCode = (arr) => {
+    return arr.map(el => el.charCodeAt(0));
+  };`.trim()
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[42]._id,
+  passed: true,
+  solution:`
+  const evenOdd = (arr) => {
+    return arr.map(el => isNaN(el) ? 'N/A' :
+      el % 2 === 0 ? 'even' : 'odd');
+  };`.trim() 
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[43]._id,
+  passed: true,
+  solution:`
+  const extractAbilities = (arr) => {
+    return arr.map(el => el.ability.name);
+  };`.trim() 
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[44]._id,
+  passed: true,
+  solution:`
+  const extractStats = (arr) => {
+    return arr.map(el => {return { name: el.stat.name, total : el.effort + el.baseStat };});
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[45]._id,
+  passed: true,
+  solution:`
+  const oddValues = (arr) => {
+    let odds = arr.filter ((val, idx) => {
+      return (val % 2);
+    });
+    return odds;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[46]._id,
+  passed: true,
+  solution:`
+  const filterStringsWithVowels = (arr) => {
+    const withVowels = arr.filter(word => {
+      let regex = word.match(/w*[aeiou]w*/g);
+      if(regex) {
+        return word;
+      }
+    });
+    return withVowels;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[47]._id,
+  passed: true,
+  solution:`
+  const notInFirstArray = (forbiddenValues, arr) => {
+    const notFirst = arr.filter(secondValue => {
+      if(!forbiddenValues.includes(secondValue)) {
+        return secondValue;
+      }
+    });
+    return notFirst;
+  };`
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[48]._id,
+  passed: true,
+  solution:`
+  const getBaseStatGreaterThan = (arr, minBaseStat) => {
+    const newThing = arr.filter(anything => anything.baseStat > minBaseStat);
+    // console.log(newThing);
+    return newThing;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[49]._id,
+  passed: true,
+  solution:`
+  const getStatName = (arr, minBaseStat) => {
+    const newThing = [];
+    arr.filter(anything => {
+      if(anything.baseStat > minBaseStat) {
+        newThing.push(anything.stat.name);
+      }
+    });
+    return newThing;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[50]._id,
+  passed: true,
+  solution: `
+  const getCharactersWithoutChildren = (arr) => {
+    const noChildren = arr.filter(character => character.children === undefined);
+    return noChildren;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[51]._id,
+  passed: true,
+  solution:`
+  const evenOddNumericValues = (arr) => {
+    const numArray = arr.filter((n) => {
+      return typeof n === 'number';
+    });
+    return numArray.map(item => {
+      if(item % 2) {
+        return 'odd';
+      } else {
+        return 'even';
+      }
+    });
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[52]._id,
+  passed: true,
+  solution:`
+  const countNumberOfElements = (arr) => {
+    const total = arr.reduce((acc, item) => {
+      return acc + 1;
+    }, 0);
+    return total;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[53]._id,
+  passed: true,
+  solution:`
+  const eyeColorTally = (arr) => {
+    return arr.reduce((acc, x) => { 
+      if(acc[x.eye_color]){
+        acc[x.eye_color] += 1;
+      } else {
+        acc[x.eye_color] = 1;
+      }
+      return acc;
+    }, {});
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[54]._id,
+  passed: true,
+  solution:`
+  const eyeColorNames = (arr) => {
+    return arr.reduce((acc, x) => { 
+      if(acc[x.eye_color]){
+        acc[x.eye_color].push(x.name);
+      } else {
+        acc[x.eye_color] = [x.name];
+      }
+      return acc;
+    }, {});
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[55]._id,
+  passed: true,
+  solution:`
+  const countNumberOfChildren = (arr) => {
+    return arr.reduce(((acc, x) => acc + (Array.isArray(x.children) ? x.children.length : 0)), 0);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[56]._id,
+  passed: true,
+  solution:`
+  const calculateAverage = (arr) => {
+    return arr.reduce(((acc, el)=> acc + el), 0) / arr.length;
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[57]._id,
+  passed: true,
+  solution:`
+  const isPrime = (value) => {
+    for(let i = 2; i < value; i++) {
+      if(value % i === 0) {
+        return false;
+      }
+    }
+    return value > 1;
+  };
+  
+  const countPrimeNumbers = (arr) => {
+    return arr.reduce(((acc, el) => acc + (isPrime(el) ? 1 : 0)), 0);
+  };`.trim()
+},
+{
+  userId: users[2]._id,
+  challengeId: codeChallenges[58]._id,
+  passed: true,
+  solution:`
+  const effortStats = (statName, arr) => {
+    let acc = { min: 10, max: 0 };
+    return statName.reduce((acc, el) => {
+      acc.min = el.effort < acc.min ? el.effort : acc.min;
+      acc.max = el.effort > acc.max ? el.effort : acc.max;
+      return acc;
+    }, acc);
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[59]._id,
+  passed: true,
+  solution:`
+  const extractChildren = (arr) => {
+    const charWithA = arr.filter(el => /a/g.test(el.name));
+    return charWithA.reduce(((acc, el) => {
+      if(el.children){
+        el.children.forEach(e => acc.push(e));          
+      }
+      return acc;
+    }), []);
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[60]._id,
+  passed: true,
+  solution:`
+  `
+},
+{
+  userId: users[0]._id,
+  challengeId: codeChallenges[61]._id,
+  passed: true,
+  solution:`
+  const grandTotal = (stores) => {
+
+    let cookiesPerHour = [];
+    for(let i = 0; i < stores[0].length; i++) {
+      let item = 0;
+      for(let j = 0; j < stores.length; j++) {
+        item += stores[j][i];
+      }
+      cookiesPerHour.push(item);
+    }
+    return cookiesPerHour;
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[62]._id,
+  passed: true,
+  solution:`
+  const salesData = (hours, data) => {
+    const result = [];
+    for(let i = 0; i < data.length; i++) {
+      const object = {
+        sales: data[i] + ' cookies ',
+        time: hours[i]
+      };
+      result.push(object);
+    }
+    return result;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[63]._id,
+  passed: true,
+  solution:`
+  const battleship = (board, row, col) => {
+    if(board[row][col] === '#') {
+      return 'hit';
+    } else {
+      return 'miss';
+    }
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[64]._id,
+  passed: true,
+  solution:`
+  const calculateProduct = (numbers) => {
+    let product = 1;
+    numbers.forEach(arr => {
+      arr.forEach(item => {
+        product *= item;
+      });
+    });
+    return product;
+  };`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[65]._id,
+  passed: true,
+  solution:`
+  const averageDailyTemperature = (weather) => {
+    let sum = 0;
+    let counter = 0;
+    weather.forEach(arr => {
+      arr.forEach(item => {
+        sum += item;
+        counter++;
+      });
+    });
+    return (sum / counter).toFixed(2);
+  };`.trim()
+},
+{
+  userId: users[1]._id,
+  challengeId: codeChallenges[66]._id,
+  passed: true,
+  solution:`
+  const averageDailyTemperature = (weather) => {
+    SOLUTION NOT FOUND
+};`.trim()
+},
+{
+  userId: users[3]._id,
+  challengeId: codeChallenges[67]._id,
+  passed: true,
+  solution:`
+  const lowestWeeklyAverage = (weather) => {
+    SOLUTION NOT FOUND
+};`.trim()
+}
 ];
