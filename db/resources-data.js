@@ -1,18 +1,3 @@
-//NOTES for RESOURCES DATA
-//Sample resource object
-// CategoryName: {
-//     overview:``.trim(),
-//     documentation: ['', ''],
-//     video: ''
-//   }
-
-//Resources can be found in the README.MD and the ASSIGNMENT.MD files in the src folder for each challenge. Look in both to find the overview, links to resources/documentation, and videos 
-//category name should match 'category' in resourcesData'
-//Overview: should be in MD with backticks and left justified. Will need 'trim()' at the end after the backticks. There should be a heading with the category name with ### and the other headings should all have ####. Code blocks can be escaped with \'\'\' 
-//documentation: is an array of url strings
-//video is a single string with the Youtube id
-
-
 const resources =
 {
   forEach: {
