@@ -664,7 +664,7 @@ const stepActions = (recipe) => {
   challengeId: codeChallenges[31]._id,
   passed: true,
   solution:`
-  export const getHouseNames = houses => {
+  const getHouseNames = houses => {
     return Object.keys(houses);
 };`.trim()
 },
