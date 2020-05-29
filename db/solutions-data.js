@@ -632,8 +632,7 @@ const stepActions = (recipe) => {
   passed: true,
   solution:`
   const removeVowels = (str) => {
-    const vowels = ['a', 'e', 'i', 'o', 'u'];
-      
+    const vowels = ['a', 'e', 'i', 'o', 'u']; 
     return str.split('').filter((el) => {
       return vowels.indexOf(el) === -1;
     }).join('');
