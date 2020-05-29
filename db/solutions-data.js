@@ -101,7 +101,7 @@ const removeOne = (num, arr) => {
 };
 
 const removeElements = (arr, callback) => {
-for(let i = 0; i < arr.length; i++) {
+  for(let i = 0; i < arr.length; i++) {
   const arrayItem = arr[i];
   callback(arrayItem, arr);
 }
@@ -191,15 +191,15 @@ const newArray = [];
   solution:`
 const fizzBuzz = (arr) => {
   arr.forEach((num, index) => {
-  if(num % 3 === 0) {
-    arr.splice(index, 1, 'Fizz');
-  }
-  if(num % 5 === 0) {
-    arr.splice(index, 1, 'Buzz');
-  }
-  if(num % 3 === 0 && num % 5 === 0) {
-    arr.splice(index, 1, 'Fizz Buzz');
-  }
+    if(num % 3 === 0) {
+      arr.splice(index, 1, 'Fizz');
+    }
+    if(num % 5 === 0) {
+      arr.splice(index, 1, 'Buzz');
+    }
+    if(num % 3 === 0 && num % 5 === 0) {
+      arr.splice(index, 1, 'Fizz Buzz');
+    }
   });
   return arr;
 };`.trim()
@@ -283,7 +283,7 @@ return arr.sort((a, b) => {
   passed: true,
   solution: `
 const alphabetize = (arr) => {
-return arr.sort();
+  return arr.sort();
 };`.trim()
 },
 {
@@ -292,9 +292,9 @@ return arr.sort();
   passed: true,
   solution: `
 const sortByLength = (arr) => {
-return arr.sort((a, b) => {
-  return a.length - b.length;
-});
+  return arr.sort((a, b) => {
+    return a.length - b.length;
+  });
 };`.trim()
 },
 {
@@ -1032,29 +1032,19 @@ const stepActions = (recipe) => {
   challengeId: codeChallenges[60]._id,
   passed: true,
   solution:`
-  `
+  let cookiesPerHour = [];
+  for(let i = 0; i < stores[0].length; i++) {
+    let item = 0;
+    for(let j = 0; j < stores.length; j++) {
+      item += stores[j][i];
+    }
+    cookiesPerHour.push(item);
+  }
+  return cookiesPerHour;`.trim()
 },
 {
   userId: users[0]._id,
   challengeId: codeChallenges[61]._id,
-  passed: true,
-  solution:`
-  const grandTotal = (stores) => {
-
-    let cookiesPerHour = [];
-    for(let i = 0; i < stores[0].length; i++) {
-      let item = 0;
-      for(let j = 0; j < stores.length; j++) {
-        item += stores[j][i];
-      }
-      cookiesPerHour.push(item);
-    }
-    return cookiesPerHour;
-  };`.trim()
-},
-{
-  userId: users[4]._id,
-  challengeId: codeChallenges[62]._id,
   passed: true,
   solution:`
   const salesData = (hours, data) => {
@@ -1067,6 +1057,15 @@ const stepActions = (recipe) => {
       result.push(object);
     }
     return result;
+  };`.trim()
+},
+{
+  userId: users[4]._id,
+  challengeId: codeChallenges[62]._id,
+  passed: true,
+  solution:`
+  const howManyTreats = (arr) => {
+    return arr[2].items[1].quantity;
   };`.trim()
 },
 {
