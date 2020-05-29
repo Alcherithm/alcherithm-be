@@ -48,7 +48,7 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-for(let i = 0; i < times; i++) {
+  for(let i = 0; i < times; i++) {
   callback(arr, num);
 }
 return arr;
@@ -60,14 +60,14 @@ return arr;
   passed: true,
   solution: `
 const addValues = (arr, value) => {
-arr.push(value);
+  arr.push(value);
 };
   
 const addNumbers = (num, arr, times, callback) => {
-for(let i = 0; i < times; i++) {
+  for(let i = 0; i < times; i++) {
   callback(arr, num);
 }
-return arr;
+  return arr;
 };`.trim()
 },
 {
@@ -76,17 +76,17 @@ return arr;
   passed: true,
   solution: `
 const removeOne = (num, arr) => {
-if(num % 3 === 2) {
+  if(num % 3 === 2) {
   arr.pop();  
-}
+  }
 };
 
 const removeElements = (arr, callback) => {
 for(let i = 0; i < arr.length; i++) {
   const arrayItem = arr[i];
   callback(arrayItem, arr);
-}
-return arr;
+  }
+  return arr;
 };`.trim()
 },
 {
@@ -97,7 +97,7 @@ return arr;
 const removeOne = (num, arr) => {
   if(num % 3 === 2) {
   arr.pop();  
-}
+  }
 };
 
 const removeElements = (arr, callback) => {
@@ -105,7 +105,7 @@ for(let i = 0; i < arr.length; i++) {
   const arrayItem = arr[i];
   callback(arrayItem, arr);
 }
-return arr;
+  return arr;
 };`.trim()
 },
 {
