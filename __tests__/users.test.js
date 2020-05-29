@@ -25,7 +25,8 @@ describe('user routes', () => {
           attempted: expect.any(Number),
           failed: expect.any(Number),
           passed: expect.any(Number), 
-          totalNumberOfChallenges: expect.any(Number)
+          totalNumberOfChallenges: expect.any(Number),
+          passingSolutionsByCategory: expect.any(Array),
         });
       });
   });
